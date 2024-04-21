@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    //cores background
+    <color name="cor_fundo1">#19173D</color>
+    <color name="cor_fundo2">#17126D</color>
+
+    //cores container:
+    <color name="cor_container">#312E69</color>
+    <color name="cor_container2">#25234E</color>
+
+    //cores das barras de digitação:
+    <color name="borda">#100E5E</color>
+    <color name="hint">#7B78AA</color>
+
+    //cores botão login
+    <color name="login1">#0DA6C2</color>
+    <color name="login2">#0E39C6</color>
+
+    //cores botão cadastro
+    <color name="cadastro1">#880DC2</color>
+    <color name="cadastro2">#4F00D0</color>
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".cadastro">
+
+    <TextView
+        android:id="@+id/smart_banha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="SMART BANHA"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginLeft="130dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
+
+        <View
+            android:id="@+id/container_components"
+         style="@style/ContainerComponents"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/smart_banha"/>
+
+    <TextView
+        android:id="@+id/cadastro"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Cadastre-se"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/container_components"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintTop_toTopOf="@id/container_components" />
+
+    <EditText
+        android:id="@+id/nome"
+        android:hint="Digite seu nome"
+        android:layout_height="48dp"
+        android:textColorHint="@color/hint"
+        style="@style/edit_text"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintStart_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/cadastro"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_height="48dp"
+        android:hint="Digite seu endereço de E-mail"
+        android:textColorHint="@color/hint"
+        style="@style/edit_text"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintStart_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/nome"/>
+
+    <EditText
+        android:id="@+id/senha"
+        android:hint="Digite sua senha"
+        android:textColorHint="@color/hint"
+        style="@style/edit_text_senha"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintStart_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/email"/>
+
+    <EditText
+        android:id="@+id/confirma_senha"
+        android:hint="Confirmar senha"
+        android:textColorHint="@color/hint"
+        style="@style/edit_text_confirma"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintStart_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/email"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botao_proximo"
+        style="@style/button"
+        android:hint="Próximo"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintStart_toEndOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/senha"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

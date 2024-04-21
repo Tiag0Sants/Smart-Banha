@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ContainerComponents">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">400dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:layout_marginTop">100dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="edit_text">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="edit_text_senha">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <style name="edit_text_confirma">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:background">@drawable/edit_text</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginLeft">200dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    //Botão login
+    <style name="button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">80dp</item>
+        <item name="android:layout_marginRight">80dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@drawable/button</item>
+    </style>
+
+    //Botão login 2
+    <style name="button2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">80dp</item>
+        <item name="android:layout_marginRight">80dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@drawable/button2</item>
+    </style>
+
+</resources>

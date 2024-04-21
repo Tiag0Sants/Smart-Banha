@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chad"
+    tools:context=".Inicial">
+
+    <TextView
+        android:id="@+id/bemvindo"
+        android:layout_height="30dp"
+        android:layout_width="160dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Bem-Vindo"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
+        android:drawablePadding="8dp"/>
+
+    <TextView
+        android:id="@+id/frase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Comece sua jornada de saúde hoje!"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bemvindo"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Login"
+        style="@style/button"
+        android:hint="LOGIN"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frase"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cadastre_se"
+        style="@style/button2"
+        android:hint="CADASTRE-SE"
+        android:textColorHint="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Login"/>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
