@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".cadastro">
+    tools:context=".FormLogin">
 
     <TextView
         android:id="@+id/smart_banha"
@@ -21,77 +21,55 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"/>
 
-        <View
-            android:id="@+id/container_components"
-         style="@style/ContainerComponents"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/smart_banha"/>
+    <View
+        android:id="@+id/container_components"
+        style="@style/ContainerComponents"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/smart_banha"/>
 
     <TextView
-        android:id="@+id/cadastro"
+        android:id="@+id/login"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Cadastre-se"
+        android:text="Login"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        android:layout_marginLeft="130dp"
+        android:textSize="25dp"
+        android:layout_marginLeft="175dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@id/container_components"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintTop_toTopOf="@id/container_components" />
 
     <EditText
-        android:id="@+id/nome"
-        android:hint="Digite seu nome"
-        android:layout_height="48dp"
-        android:textColorHint="@color/hint"
-        style="@style/edit_text"
-        app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/cadastro"/>
-
-    <EditText
         android:id="@+id/email"
-        android:layout_height="48dp"
-        android:hint="Digite seu endereço de E-mail"
+        android:hint="Digite o seu endereço de E-mail"
+        android:layout_height="55dp"
         android:textColorHint="@color/hint"
         style="@style/edit_text"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/nome"/>
+        app:layout_constraintTop_toBottomOf="@id/login"/>
 
     <EditText
         android:id="@+id/senha"
+        android:layout_height="55dp"
         android:hint="Digite sua senha"
         android:textColorHint="@color/hint"
-        style="@style/edit_text_senha"
+        style="@style/edit_text"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
         app:layout_constraintTop_toBottomOf="@id/email"/>
 
-    <EditText
-        android:id="@+id/confirma_senha"
-        style="@style/edit_text_confirma"
-        android:layout_width="156dp"
-        android:hint="Confirmar senha"
-        android:textColorHint="@color/hint"
-        app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/email" />
-
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/botao_proximo"
+        android:id="@+id/botao_login"
         style="@style/button"
-        android:hint="Próximo"
+        android:hint="LOGIN"
         android:textColorHint="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
         app:layout_constraintTop_toBottomOf="@id/senha"/>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

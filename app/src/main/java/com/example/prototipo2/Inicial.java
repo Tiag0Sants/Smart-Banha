@@ -33,6 +33,8 @@ public class Inicial extends AppCompatActivity implements View.OnClickListener {
         }
         if (v.getId() == R.id.Login) {
             //se clicou no botão Login
+            Intent tela = new Intent(this, FormLogin.class);
+            startActivity(tela);
         }
     }
 }
