@@ -1,17 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".suporte">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="azul"
-        tools:ignore="HardcodedText" />
+        android:layout_height="wrap_content"
 
-</FrameLayout>
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Fale com nossa equipe de desenvolvimento. ( ͡❛ ͜ʖ ͡❛)"
+        android:textColor="@color/white"
+
+        android:textSize="15sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/container_components"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+
+        />
+
+    <ImageView
+        android:id="@+id/image_wpp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/wpp_image"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <EditText
+        android:id="@+id/edttxt_telefone"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_text"
+        app:layout_constraintStart_toEndOf="@+id/image_wpp"
+        app:layout_constraintTop_toTopOf="@id/view"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

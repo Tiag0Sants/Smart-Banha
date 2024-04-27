@@ -44,13 +44,13 @@
 
     <EditText
         android:id="@+id/nome"
-        android:hint="Digite seu nome"
-        android:layout_height="48dp"
-        android:textColorHint="@color/hint"
         style="@style/edit_text"
-        app:layout_constraintStart_toStartOf="@id/container_components"
+        android:layout_height="48dp"
+        android:hint="Digite seu nome"
+        android:textColorHint="@color/hint"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/cadastro"/>
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/cadastro" />
 
     <EditText
         android:id="@+id/email"
