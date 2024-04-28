@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8e47800-f7d4-4ce4-ad5c-72c96234860b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/migrations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/migrations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/com/example/prototipo2/Inicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/com/example/prototipo2/Inicial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/button.xml" beforeDir="false" afterPath="$PROJECT_DIR$/button.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/button2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/button2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container_components.xml" beforeDir="false" afterPath="$PROJECT_DIR$/container_components.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/edit_text.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../font/poppins_bold.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../font/poppins_bold.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../font/poppins_semibold.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../font/poppins_semibold.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_cadastro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_cadastro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values-v26/style.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values-v26/style.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/font_certs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/font_certs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/preloaded_fonts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/preloaded_fonts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/style.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/style.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../gradlew.bat" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="2fhX0GwuRRQexylaCwv0KePSA9P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/tiago/AndroidStudioProjects/Prototipo2"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8e47800-f7d4-4ce4-ad5c-72c96234860b" name="Changes" comment="" />
+      <created>1714254058902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714254058902</updated>
+    </task>
+    <servers />
+  </component>
+</project>

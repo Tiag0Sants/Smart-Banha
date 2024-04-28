@@ -60,4 +60,17 @@
         <item name="android:background">@drawable/button2</item>
     </style>
 
+    //Botões opções
+    <style name="button_opcoes">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
 </resources>
