@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".perfil">
+
+    <ImageView
+        android:id="@+id/foto_perfil"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/perfil_provisorio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <View
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/container_components"
+        app:layout_constraintTop_toBottomOf="@+id/foto_perfil"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toTopOf="@+id/info"
+        android:text="Nome:"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/idade"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/nome"
+        android:text="Idade:"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/altura"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/idade"
+        android:text="Altura:"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/atv"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/altura"
+        android:text="Nivel de atividade:"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="UnknownId" />
+
+    <TextView
+        android:id="@+id/objetivo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/atv"
+        android:text="Objetivo:"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        tools:ignore="UnknownId" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botao_editar"
+        style="@style/button"
+        android:text="Editar"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintStart_toStartOf="@id/info"
+        app:layout_constraintStart_toEndOf="@id/info"
+        app:layout_constraintTop_toBottomOf="@id/objetivo"
+        tools:ignore="NotSibling" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
