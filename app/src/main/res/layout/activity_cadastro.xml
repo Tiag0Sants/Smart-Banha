@@ -43,33 +43,36 @@
         app:layout_constraintTop_toTopOf="@id/container_components" />
 
     <EditText
-        android:id="@+id/nome"
+        android:id="@+id/cadastro_nome"
         style="@style/edit_text"
         android:layout_height="48dp"
         android:hint="Digite seu nome"
+        android:textColor="@color/white"
         android:textColorHint="@color/hint"
         app:layout_constraintStart_toEndOf="@id/container_components"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintTop_toBottomOf="@id/cadastro" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/cadastro_email"
         android:layout_height="48dp"
         android:hint="Digite seu endereço de E-mail"
         android:textColorHint="@color/hint"
+        android:textColor="@color/white"
         style="@style/edit_text"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/nome"/>
+        app:layout_constraintTop_toBottomOf="@id/cadastro_nome"/>
 
     <EditText
-        android:id="@+id/senha"
+        android:id="@+id/cadastro_senha"
         android:hint="Digite sua senha"
         android:textColorHint="@color/hint"
         style="@style/edit_text_senha"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/email"/>
+        app:layout_constraintTop_toBottomOf="@id/cadastro_email"/>
 
     <EditText
         android:id="@+id/confirma_senha"
@@ -77,19 +80,20 @@
         android:layout_width="156dp"
         android:hint="Confirmar senha"
         android:textColorHint="@color/hint"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/container_components"
         app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/email" />
+        app:layout_constraintTop_toBottomOf="@id/cadastro_email" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/botao_proximo"
+        android:id="@+id/cadastro_botao_proximo"
         style="@style/button"
         android:hint="Próximo"
         android:textColorHint="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/senha"/>
+        app:layout_constraintTop_toBottomOf="@id/cadastro_senha"/>
 
 
 

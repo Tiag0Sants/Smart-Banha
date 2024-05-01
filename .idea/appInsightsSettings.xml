@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.prototipo2" />
+                  <option name="mobileSdkAppId" value="1:1040918440853:android:405ac7bea3f02278dc649c" />
+                  <option name="projectId" value="smart-banha" />
+                  <option name="projectNumber" value="1040918440853" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
