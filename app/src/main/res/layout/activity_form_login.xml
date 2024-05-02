@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="@id/container_components" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/login_email"
         android:hint="Digite o seu endereço de E-mail"
         android:layout_height="55dp"
         android:textColorHint="@color/hint"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@id/login"/>
 
     <EditText
-        android:id="@+id/senha"
+        android:id="@+id/login_senha"
         android:layout_height="55dp"
         android:hint="Digite sua senha"
         android:textColorHint="@color/hint"
@@ -62,7 +62,7 @@
         style="@style/edit_text"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/email"/>
+        app:layout_constraintTop_toBottomOf="@id/login_email"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botao_login"
@@ -72,6 +72,6 @@
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/senha"/>
+        app:layout_constraintTop_toBottomOf="@id/login_senha"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

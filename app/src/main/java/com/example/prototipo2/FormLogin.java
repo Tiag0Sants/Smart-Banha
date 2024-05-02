@@ -14,15 +14,21 @@ import android.os.Bundle;
 import android.view.View;
 import java.util.Objects;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class FormLogin extends AppCompatActivity {
 
+    EditText login_email, login_senha;
     Button botao_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
+
+        login_email = findViewById(R.id.login_email);
+        login_senha = findViewById(R.id.login_senha);
+        botao_login = findViewById(R.id.botao_login);
 
     }
 }
