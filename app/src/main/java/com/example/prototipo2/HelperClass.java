@@ -2,6 +2,10 @@ package com.example.prototipo2;
 
 public class HelperClass {
     String name, email, username, password;
+
+    public HelperClass(String nome, String email, String senha) {
+    }
+
     public String getName() {
         return name;
     }
