@@ -1,16 +1,16 @@
 package com.example.prototipo2;
 
 public class HelperClass {
-    String name, email, username, password;
+    String nome, email, senha;
 
     public HelperClass(String nome, String email, String senha) {
     }
 
     public String getName() {
-        return name;
+        return nome;
     }
     public void setName(String name) {
-        this.name = name;
+        this.nome = nome;
     }
     public String getEmail() {
         return email;
@@ -18,23 +18,17 @@ public class HelperClass {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getUsername() {
-        return username;
-    }
-    public void setUsername(String username) {
-        this.username = username;
-    }
+
     public String getPassword() {
-        return password;
+        return senha;
     }
     public void setPassword(String password) {
-        this.password = password;
+        this.senha = senha;
     }
     public HelperClass(String name, String email, String username, String password) {
-        this.name = name;
+        this.nome = name;
         this.email = email;
-        this.username = username;
-        this.password = password;
+        this.senha = password;
     }
     public HelperClass() {
     }

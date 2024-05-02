@@ -55,14 +55,15 @@
 
     <EditText
         android:id="@+id/login_senha"
+        style="@style/edit_text"
         android:layout_height="55dp"
         android:hint="Digite sua senha"
-        android:textColorHint="@color/hint"
+        android:password="true"
         android:textColor="@color/white"
-        style="@style/edit_text"
-        app:layout_constraintStart_toStartOf="@id/container_components"
+        android:textColorHint="@color/hint"
         app:layout_constraintStart_toEndOf="@id/container_components"
-        app:layout_constraintTop_toBottomOf="@id/login_email"/>
+        app:layout_constraintStart_toStartOf="@id/container_components"
+        app:layout_constraintTop_toBottomOf="@id/login_email" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botao_login"

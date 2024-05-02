@@ -29,7 +29,7 @@
         tools:ignore="UnknownId" />
 
     <TextView
-        android:id="@+id/nome"
+        android:id="@+id/perfil_titulo_nome"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
@@ -42,11 +42,24 @@
         android:layout_marginTop="40dp"/>
 
     <TextView
-        android:id="@+id/idade"
+        android:id="@+id/perfil_nome"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toTopOf="@+id/info" />
+
+    <TextView
+        android:id="@+id/perfil_titulo_idade"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/nome"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_nome"
         android:text="Idade:"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -56,11 +69,11 @@
         tools:ignore="UnknownId" />
 
     <TextView
-        android:id="@+id/altura"
+        android:id="@+id/perfil_titulo_altura"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/idade"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_idade"
         android:text="Altura:"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -70,11 +83,11 @@
         tools:ignore="UnknownId" />
 
     <TextView
-        android:id="@+id/atv"
+        android:id="@+id/perfil_titulo_atv"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/altura"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_altura"
         android:text="Nivel de atividade:"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -84,11 +97,11 @@
         tools:ignore="UnknownId" />
 
     <TextView
-        android:id="@+id/objetivo"
+        android:id="@+id/perfil_titulo_objetivo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/atv"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_atv"
         android:text="Objetivo:"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -98,15 +111,15 @@
         tools:ignore="UnknownId" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/botao_editar"
+        android:id="@+id/perfil_botao_sair"
         style="@style/button"
-        android:text="Editar"
+        android:text="Sair"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="@id/info"
         app:layout_constraintStart_toEndOf="@id/info"
-        app:layout_constraintTop_toBottomOf="@id/objetivo"
+        app:layout_constraintTop_toBottomOf="@id/perfil_titulo_objetivo"
         tools:ignore="NotSibling" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
