@@ -7,6 +7,10 @@
     android:background="@drawable/background"
     tools:context=".perfil">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
     <ImageView
         android:id="@+id/foto_perfil"
         android:layout_width="150dp"
@@ -15,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="40dp"/>
 
     <View
         android:id="@+id/info"

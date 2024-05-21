@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
+    ImageView btnvoltar;
 
     Button atendimento;
 
@@ -15,6 +17,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        btnvoltar = (ImageView) findViewById(R.id.btnvoltar);
+        btnvoltar.setOnClickListener(this);
 
         atendimento = (Button) findViewById(R.id.atendimento);
         atendimento.setOnClickListener(this);
@@ -29,6 +34,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             startActivity(tela);
         }
 
+        if (v.getId() == R.id.btnvoltar) {
+            //se clicou no botão Voltar
+            Intent tela = new Intent(this, Inicial.class);
+            startActivity(tela);
+        }
 
     }
 }

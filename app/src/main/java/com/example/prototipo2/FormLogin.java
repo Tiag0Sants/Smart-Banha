@@ -15,20 +15,27 @@ import android.view.View;
 import java.util.Objects;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class FormLogin extends AppCompatActivity {
 
     EditText login_email, login_senha;
     Button botao_login;
 
+    ImageView btnvoltar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
 
+        btnvoltar = (ImageView) findViewById(R.id.btnvoltar);
+        btnvoltar.setOnClickListener((View.OnClickListener) this);
+
         login_email = findViewById(R.id.login_email);
         login_senha = findViewById(R.id.login_senha);
         botao_login = findViewById(R.id.botao_login);
+
 
         botao_login.setOnClickListener(new View.OnClickListener() {
             @Override

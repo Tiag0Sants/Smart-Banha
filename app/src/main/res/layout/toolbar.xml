@@ -23,7 +23,6 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/btnvoltar"
             android:layout_marginLeft="10dp"
-            android:text="Suporte"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:textSize="15sp"
