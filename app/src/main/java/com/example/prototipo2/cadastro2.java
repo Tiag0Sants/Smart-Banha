@@ -22,7 +22,7 @@ public class cadastro2 extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         if (v.getId() == R.id.btnvoltar) {
             // If back button is clicked
-            Intent tela = new Intent(this, Inicial.class);
+            Intent tela = new Intent(this, cadastro.class);
             startActivity(tela);
         }
     }
