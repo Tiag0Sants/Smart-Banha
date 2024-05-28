@@ -3,95 +3,84 @@ package com.example.prototipo2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import java.util.Objects;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.prototipo2.Util.ConfiguraBd;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class FormLogin extends AppCompatActivity {
 
-    EditText login_email, login_senha;
-    Button botao_login;
+    private EditText login_email, login_senha;
+    private Button login_botao;
+    private FirebaseAuth mAuth;
+    private static final String TAG = "FormLoginActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_login);
 
+        mAuth = FirebaseAuth.getInstance();
+        inicializar();
+    }
+
+    private void inicializar() {
         login_email = findViewById(R.id.login_email);
         login_senha = findViewById(R.id.login_senha);
-        botao_login = findViewById(R.id.botao_login);
-        botao_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!validateUsername() | !validatePassword()) {
-                } else {
-                    checkUser();
-                }
-            }
-        });
+        login_botao = findViewById(R.id.botao_login);
 
-    }
-    public Boolean validateUsername() {
-        String val = login_email.getText().toString();
-        if (val.isEmpty()) {
-            login_email.setError("Username cannot be empty");
-            return false;
-        } else {
-            login_email.setError(null);
-            return true;
-        }
-    }
-    public Boolean validatePassword(){
-        String val = login_senha.getText().toString();
-        if (val.isEmpty()) {
-            login_senha.setError("Password cannot be empty");
-            return false;
-        } else {
-            login_senha.setError(null);
-            return true;
-        }
-    }
-    public void checkUser(){
-        String userEmail = login_email.getText().toString().trim();
-        String userSenha = login_senha.getText().toString().trim();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-        Query checkUserDatabase = reference.orderByChild("email").equalTo(userEmail);
-        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+        login_botao.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    login_email.setError(null);
-                    String passwordFromDB = snapshot.child(userEmail).child("senha").getValue(String.class);
-                    if (passwordFromDB.equals(userSenha)) {
-                        login_email.setError(null);
-                        String nameFromDB = snapshot.child(userEmail).child("nome").getValue(String.class);
-                        String emailFromDB = snapshot.child(userEmail).child("email").getValue(String.class);
-                        Intent intent = new Intent(FormLogin.this, MainActivity.class);
-                        intent.putExtra("nome", nameFromDB);
-                        intent.putExtra("email", emailFromDB);
-                        intent.putExtra("password", passwordFromDB);
-                        startActivity(intent);
-                    } else {
-                        login_senha.setError("Invalid Credentials");
-                        login_senha.requestFocus();
-                    }
-                } else {
-                    login_email.setError("User does not exist");
-                    login_email.requestFocus();
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onClick(View v) {
+                Log.d(TAG, "Botão login clicado");
+                validarLogin(v);
             }
         });
     }
-}   
+
+    private void validarLogin(View v) {
+        String email = login_email.getText().toString();
+        String senha = login_senha.getText().toString();
+
+        if (!email.isEmpty() && !senha.isEmpty()) {
+            realizarLogin(email, senha);
+        } else {
+            Toast.makeText(FormLogin.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void realizarLogin(String email, String senha) {
+        mAuth.signInWithEmailAndPassword(email, senha)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(FormLogin.this, "Login realizado com sucesso", Toast.LENGTH_SHORT).show();
+                            // Navegar para a tela principal da aplicação
+                            Intent intent = new Intent(FormLogin.this, Home.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            String excecao = "";
+                            try {
+                                throw task.getException();
+                            } catch (Exception e) {
+                                excecao = "Erro ao realizar login: " + e.getMessage();
+                                e.printStackTrace();
+                            }
+
+                            Toast.makeText(FormLogin.this, excecao, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+}
