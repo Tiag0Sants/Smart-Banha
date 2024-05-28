@@ -1,24 +1,23 @@
 package com.example.prototipo2;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-import android.os.Bundle;
-
-
-public class cadastro extends AppCompatActivity {
+public class cadastro extends AppCompatActivity implements View.OnClickListener {
 
     EditText cadastro_nome, cadastro_email, cadastro_senha;
     Button cadastrar;
     FirebaseDatabase database;
     DatabaseReference reference;
+    ImageView btnvoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +28,7 @@ public class cadastro extends AppCompatActivity {
         cadastro_email = findViewById(R.id.cadastro_email);
         cadastro_senha = findViewById(R.id.cadastro_senha);
         cadastrar = findViewById(R.id.cadastro_botao_proximo);
+        btnvoltar = findViewById(R.id.btnvoltar);
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,8 +40,11 @@ public class cadastro extends AppCompatActivity {
                 String email = cadastro_email.getText().toString();
                 String senha = cadastro_senha.getText().toString();
 
-                HelperClass helperClass = new HelperClass(nome, email, senha);
-                reference.child(email).setValue(helperClass);
+                // Replacing . with , to avoid issues with Firebase path
+                String sanitizedEmail = email.replace(".", ",");
+
+                HelperClass helperClass = new HelperClass(nome, sanitizedEmail, senha);
+                reference.child(sanitizedEmail).setValue(helperClass);
 
                 Toast.makeText(cadastro.this, "Seu cadastro deu certo", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(cadastro.this, FormLogin.class);
@@ -49,5 +52,15 @@ public class cadastro extends AppCompatActivity {
             }
         });
 
+        btnvoltar.setOnClickListener(this);  // Setting the onClickListener for the back button
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnvoltar) {
+            // If back button is clicked
+            Intent tela = new Intent(this, Inicial.class);
+            startActivity(tela);
+        }
     }
 }
