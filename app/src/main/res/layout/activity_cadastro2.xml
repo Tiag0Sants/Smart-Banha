@@ -101,11 +101,10 @@
             android:id="@+id/radio_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@null"
-            android:background="?android:attr/selectableItemBackground"
-            android:drawableLeft="@drawable/female"
             android:layout_marginLeft="30dp"
-            />
+            android:background="?android:attr/selectableItemBackground"
+            android:button="@null"
+            android:drawableLeft="@drawable/female" />
     </RadioGroup>
 
     <TextView
@@ -325,22 +324,15 @@
 </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/cadastro_botao_proximo"
+        android:id="@+id/cadastro_botao_finalizar"
         style="@style/button"
         android:hint="Finalizar"
         android:textColorHint="@color/white"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintStart_toEndOf="@id/container_components"
+        app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintTop_toBottomOf="@id/nvl"
         tools:ignore="NotSibling" />
-
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

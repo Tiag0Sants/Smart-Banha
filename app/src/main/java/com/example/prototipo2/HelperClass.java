@@ -1,35 +1,79 @@
 package com.example.prototipo2;
 
-public class HelperClass {
-    String nome, email, senha;
+import java.io.Serializable;
 
-    public HelperClass(String nome, String email, String senha) {
-    }
+public class HelperClass implements Serializable {
+  private String nome, email, senha, gender;
+    private int age;
+    private float weight;
+    private float height;
+    private String goal;
 
-    public String getName() {
+  public HelperClass(){
+
+  }
+
+    public String getNome() {
         return nome;
     }
-    public void setName(String name) {
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword() {
+    public String getSenha() {
         return senha;
     }
-    public void setPassword(String password) {
+
+    public void setSenha(String senha) {
         this.senha = senha;
     }
-    public HelperClass(String name, String email, String username, String password) {
-        this.nome = name;
-        this.email = email;
-        this.senha = password;
+
+    public String getGender() {
+        return gender;
     }
-    public HelperClass() {
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public String getGoal() {
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
     }
 }
