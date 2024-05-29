@@ -150,16 +150,17 @@
 
     <EditText
         android:id="@+id/valor_altura"
-        android:textColor="@color/white"
+        style="@style/edit_text_senha"
         android:layout_width="60dp"
         android:layout_height="48dp"
-        app:layout_constraintStart_toStartOf="@+id/container_components"
-        app:layout_constraintStart_toEndOf="@+id/container_components"
-        app:layout_constraintTop_toBottomOf="@+id/genero_grupo"
-        android:layout_marginLeft="270dp"
         android:layout_marginTop="-1dp"
         android:hint="Digite sua idade"
-        style="@style/edit_text_senha" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/container_components"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/container_components"
+        app:layout_constraintStart_toStartOf="@+id/container_components"
+        app:layout_constraintTop_toBottomOf="@+id/genero_grupo" />
 
     <TextView
         android:id="@+id/peso"
@@ -168,7 +169,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Peso Kg:"
+        android:text="Peso (Kg):"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/container_components"

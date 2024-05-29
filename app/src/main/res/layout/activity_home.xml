@@ -21,12 +21,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
-        android:layout_marginLeft="-320dp"
+        android:layout_marginStart="-320dp"
         android:layout_marginTop="15dp"/>
 
     <TextView
         android:id="@+id/msg_bemvindo"
-        android:text="Bem-Vindo de volta!!"
+        android:text="@string/bem_vindo_de_volta"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
         android:layout_width="match_parent"
@@ -34,17 +34,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include"
-        android:layout_marginLeft="90dp"
+        android:layout_marginStart="90dp"
         android:layout_marginTop="30dp"/>
 
     <TextView
         android:id="@+id/ver_hj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="O que gostaria de ver hoje?"
+        android:text="@string/o_que_gostaria_de_ver_hoje"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintTop_toBottomOf="@+id/imagem_perfil"
         android:layout_marginTop="30dp"
         tools:ignore="UnknownId" />
@@ -55,8 +55,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/ver_hj"
         style="@style/button_opcoes"
-        android:text="Planilhas de treino"
-        android:drawableLeft="@drawable/treino"
+        android:text="@string/planilhas_de_treino"
+        android:drawableStart="@drawable/treino"
         />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -65,8 +65,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/platinha_treino"
         style="@style/button_opcoes"
-        android:text="Refeições saúdaveis"
-        android:drawableLeft="@drawable/alimentos"/>
+        android:text="@string/refei_es_sa_daveis"
+        android:drawableStart="@drawable/alimentos"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Desempenho"
@@ -74,8 +74,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/refeicoes"
         style="@style/button_opcoes"
-        android:text="Desempenho"
-        android:drawableLeft="@drawable/grafico"/>
+        android:text="@string/desempenho"
+        android:drawableStart="@drawable/grafico"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/atendimento"
@@ -83,9 +83,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/Desempenho"
         style="@style/button_opcoes"
-        android:text="Atendimento ao cliente"
-        android:drawableLeft="@drawable/suporte"
-        tools:ignore="UnknownId" />
+        android:text="@string/atendimento_ao_cliente"
+        android:drawableStart="@drawable/suporte"
+        />
 
 
 
