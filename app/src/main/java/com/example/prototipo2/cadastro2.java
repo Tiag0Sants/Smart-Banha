@@ -107,6 +107,18 @@ public class cadastro2 extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("TMB_RESULTADO", tmbFinal);
             intent.putExtra("IMC_RESULTADO", imc);
+            intent.putExtra("IDADE", idade);
+            intent.putExtra("PESO", peso);
+            intent.putExtra("ALTURA", altura * 100); // Convertendo de volta para centímetros
+            intent.putExtra("GENERO", genero);
+
+            int selectedObjetivoId = objetivoGroup.getCheckedRadioButtonId();
+            if (selectedObjetivoId != -1) {
+                RadioButton selectedObjetivo = findViewById(selectedObjetivoId);
+                intent.putExtra("OBJETIVO", selectedObjetivo.getText().toString());
+            }
+
+            // Start MainActivity with the collected data
             startActivity(intent);
 
             // Salva os dados no Firebase
@@ -117,7 +129,6 @@ public class cadastro2 extends AppCompatActivity {
             usuario.setImc(imc);
             usuario.setTmb(tmbFinal);
 
-            int selectedObjetivoId = objetivoGroup.getCheckedRadioButtonId();
             if (selectedObjetivoId != -1) {
                 RadioButton selectedObjetivo = findViewById(selectedObjetivoId);
                 usuario.setGoal(selectedObjetivo.getText().toString());

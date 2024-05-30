@@ -107,7 +107,7 @@ public class cadastro extends AppCompatActivity {
                 if (task.isSuccessful()){
                     Toast.makeText(cadastro.this, "Sucesso ao cadastrar o usuário!", Toast.LENGTH_SHORT).show();
                     // Navegar para a Activity de dados adicionais
-                    Intent intent = new Intent(cadastro.this, cadastro2.class);
+                    Intent intent = new Intent(cadastro.this, MainActivity.class);
                     intent.putExtra("usuario", usuario);
                     intent.putExtra("nomeUsuario", usuario.getNome()); // Passa o nome do usuário para a MainActivity
                     startActivity(intent);

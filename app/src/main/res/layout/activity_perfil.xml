@@ -71,7 +71,7 @@
         app:layout_constraintTop_toTopOf="@+id/info" />
 
     <TextView
-        android:id="@+id/perfil_titulo_idade"
+        android:id="@+id/perfil_idade"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
@@ -85,11 +85,11 @@
         tools:ignore="UnknownId" />
 
     <TextView
-        android:id="@+id/perfil_titulo_altura"
+        android:id="@+id/perfil_altura"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_idade"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_idade"
         android:text="Altura:"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -99,11 +99,11 @@
         tools:ignore="UnknownId" />
 
     <TextView
-        android:id="@+id/perfil_titulo_atv"
+        android:id="@+id/perfil_atv"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_altura"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_altura"
         android:text="Nivel de atividade:"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -113,11 +113,11 @@
         tools:ignore="UnknownId" />
 
     <TextView
-        android:id="@+id/perfil_titulo_objetivo"
+        android:id="@+id/perfil_objetivo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_atv"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_atv"
         android:text="Objetivo:"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -135,7 +135,7 @@
         android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="@id/info"
         app:layout_constraintStart_toEndOf="@id/info"
-        app:layout_constraintTop_toBottomOf="@id/perfil_titulo_objetivo"
+        app:layout_constraintTop_toBottomOf="@id/perfil_objetivo"
         tools:ignore="NotSibling" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

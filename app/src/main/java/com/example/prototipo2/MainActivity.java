@@ -13,6 +13,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,27 +32,38 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        mDatabase = FirebaseDatabase.getInstance().getReference("users").child(currentUser.getUid());
 
-        mDatabase.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                HelperClass user = dataSnapshot.getValue(HelperClass.class);
-                if (user != null) {
-                    double tmb = user.getTmb(); // Supondo que o valor de TMB esteja no objeto HelperClass
-                    double imc = user.getImc(); // Supondo que o valor de IMC esteja no objeto HelperClass
-                    String nomeUsuario = user.getNome();
+        if (currentUser != null) {
+            // Convert email to a valid Firebase Database key
+            String emailKey = currentUser.getEmail().replace(".", "_");
 
-                    textViewTMB.setText("Sua TMB é: " + String.format("%.2f", tmb));
-                    textViewIMC.setText("Seu IMC é: " + String.format("%.2f", imc));
-                    textViewNomeUsuario.setText(nomeUsuario);
+            // Reference to the user's data
+            mDatabase = FirebaseDatabase.getInstance().getReference("users").child(emailKey);
+
+            mDatabase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    HelperClass user = dataSnapshot.getValue(HelperClass.class);
+                    if (user != null) {
+                        double tmb = user.getTmb(); // Supondo que o valor de TMB esteja no objeto HelperClass
+                        double imc = user.getImc(); // Supondo que o valor de IMC esteja no objeto HelperClass
+                        String nomeUsuario = user.getNome();
+
+                        textViewTMB.setText("Sua TMB é: " + String.format("%.2f", tmb));
+                        textViewIMC.setText("Seu IMC é: " + String.format("%.2f", imc));
+                        textViewNomeUsuario.setText(nomeUsuario);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Erro ao recuperar dados do usuário", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle database error
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    Toast.makeText(MainActivity.this, "Erro ao acessar o banco de dados: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            Toast.makeText(MainActivity.this, "Usuário não autenticado", Toast.LENGTH_SHORT).show();
+        }
     }
 }
