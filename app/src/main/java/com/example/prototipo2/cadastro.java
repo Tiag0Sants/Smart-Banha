@@ -109,6 +109,7 @@ public class cadastro extends AppCompatActivity {
                     // Navegar para a Activity de dados adicionais
                     Intent intent = new Intent(cadastro.this, cadastro2.class);
                     intent.putExtra("usuario", usuario);
+                    intent.putExtra("nomeUsuario", usuario.getNome()); // Passa o nome do usuário para a MainActivity
                     startActivity(intent);
                     finish();
                 }else{

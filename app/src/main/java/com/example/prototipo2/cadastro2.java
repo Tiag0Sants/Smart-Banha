@@ -35,24 +35,24 @@ public class cadastro2 extends AppCompatActivity {
         finalizarCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcularETransferirTMB(); // Chama a função para calcular e transferir a TMB
+                calcularETransferirDados(); // Chama a função para calcular e transferir a TMB e IMC
             }
         });
     }
 
     // Função para inicializar os componentes da interface
     private void inicializar() {
-        idade = findViewById(R.id.valor_idade); // Corrigido o ID para valor_idade
+        idade = findViewById(R.id.valor_idade);
         peso = findViewById(R.id.valor_peso);
         altura = findViewById(R.id.valor_altura);
         generoGroup = findViewById(R.id.genero_grupo);
         objetivoGroup = findViewById(R.id.obj_grupo);
-        nivelAtividadeGroup = findViewById(R.id.nvl); // Adicionado o RadioGroup para nível de atividade física
+        nivelAtividadeGroup = findViewById(R.id.nvl);
         finalizarCadastro = findViewById(R.id.cadastro_botao_finalizar);
     }
 
-    // Função para calcular a TMB e transferir os dados para a próxima Activity
-    private void calcularETransferirTMB() {
+    // Função para calcular a TMB, IMC e transferir os dados para a próxima Activity
+    private void calcularETransferirDados() {
         // Obtenção dos valores inseridos
         String strIdade = idade.getText().toString();
         String strPeso = peso.getText().toString();
@@ -61,7 +61,10 @@ public class cadastro2 extends AppCompatActivity {
         if (!strIdade.isEmpty() && !strPeso.isEmpty() && !strAltura.isEmpty()) {
             int idade = Integer.parseInt(strIdade);
             float peso = Float.parseFloat(strPeso);
-            float altura = Float.parseFloat(strAltura);
+            float altura = Float.parseFloat(strAltura) / 100; // Convertendo altura para metros
+
+            // Calcula o IMC
+            double imc = peso / (altura * altura);
 
             // Obtém o gênero selecionado
             int selectedGeneroId = generoGroup.getCheckedRadioButtonId();
@@ -80,27 +83,22 @@ public class cadastro2 extends AppCompatActivity {
             }
 
             double fatorAtividade;
-            switch (selectedNivelId) {
-                case R.id.radio_baixo:
-                    fatorAtividade = 1.2;
-                    break;
-                case R.id.radio_moderado:
-                    fatorAtividade = 1.55;
-                    break;
-                case R.id.radio_alto:
-                    fatorAtividade = 1.725;
-                    break;
-                default:
-                    fatorAtividade = 1.0;
-                    break;
+            if (selectedNivelId == R.id.radio_baixo) {
+                fatorAtividade = 1.2;
+            } else if (selectedNivelId == R.id.radio_moderado) {
+                fatorAtividade = 1.55;
+            } else if (selectedNivelId == R.id.radio_alto) {
+                fatorAtividade = 1.725;
+            } else {
+                fatorAtividade = 1.0;
             }
 
             // Calcula a TMB
             double tmb;
             if (genero.equalsIgnoreCase("masculino")) {
-                tmb = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * idade);
+                tmb = 88.36 + (13.4 * peso) + (4.8 * altura * 100) - (5.7 * idade); // altura convertida de metros para cm
             } else {
-                tmb = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * idade);
+                tmb = 447.6 + (9.2 * peso) + (3.1 * altura * 100) - (4.3 * idade); // altura convertida de metros para cm
             }
 
             double tmbFinal = tmb * fatorAtividade;
@@ -108,13 +106,16 @@ public class cadastro2 extends AppCompatActivity {
             // Passa os dados para a nova Activity
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("TMB_RESULTADO", tmbFinal);
+            intent.putExtra("IMC_RESULTADO", imc);
             startActivity(intent);
 
             // Salva os dados no Firebase
             usuario.setAge(idade);
             usuario.setWeight(peso);
-            usuario.setHeight(altura);
+            usuario.setHeight(altura * 100); // Convertendo de volta para centímetros
             usuario.setGender(genero);
+            usuario.setImc(imc);
+            usuario.setTmb(tmbFinal);
 
             int selectedObjetivoId = objetivoGroup.getCheckedRadioButtonId();
             if (selectedObjetivoId != -1) {
