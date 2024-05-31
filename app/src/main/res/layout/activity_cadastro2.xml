@@ -84,7 +84,7 @@
         app:layout_constraintStart_toEndOf="@id/container_components"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/dados"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
         >
 
         <RadioButton
@@ -93,32 +93,32 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:background="?android:attr/selectableItemBackground"
-            android:drawableLeft="@drawable/male"
-            android:layout_marginLeft="10dp"
+            android:drawableStart="@drawable/male"
+            android:layout_marginStart="10dp"
             />
 
         <RadioButton
             android:id="@+id/radio_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:background="?android:attr/selectableItemBackground"
             android:button="@null"
-            android:drawableLeft="@drawable/female" />
+            android:drawableStart="@drawable/female" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/idade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Idade:"
-        android:textSize="20dp"
+        android:text="@string/idade"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="@+id/container_components"
         app:layout_constraintStart_toEndOf="@+id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/sexo"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp" />
 
     <EditText
@@ -129,23 +129,23 @@
         app:layout_constraintStart_toStartOf="@+id/container_components"
         app:layout_constraintStart_toEndOf="@+id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/genero_grupo"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="-1dp"
-        android:hint="Digite sua idade"
+        android:hint="@string/digite_sua_idade"
         style="@style/edit_text_senha" />
 
     <TextView
         android:id="@+id/altura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Altura:"
-        android:textSize="20dp"
+        android:text="@string/altura"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="@+id/container_components"
         app:layout_constraintStart_toEndOf="@+id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/sexo"
-        android:layout_marginLeft="180dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="25dp" />
 
     <EditText
@@ -154,7 +154,7 @@
         android:layout_width="60dp"
         android:layout_height="48dp"
         android:layout_marginTop="-1dp"
-        android:hint="Digite sua idade"
+        android:hint="@string/digite_sua_idade123"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/container_components"
         app:layout_constraintHorizontal_bias="1.0"
@@ -166,12 +166,12 @@
         android:id="@+id/peso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Peso (Kg):"
+        android:text="@string/peso_kg"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/container_components"
         app:layout_constraintStart_toStartOf="@+id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/idade" />
@@ -184,23 +184,23 @@
         app:layout_constraintStart_toStartOf="@+id/container_components"
         app:layout_constraintStart_toEndOf="@+id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/valor_altura"
-        android:layout_marginLeft="160dp"
+        android:layout_marginStart="160dp"
         android:layout_marginTop="20dp"
-        android:hint="Digite sua idade"
+        android:hint="@string/digite_sua_idade321"
         style="@style/edit_text_senha" />
 
     <TextView
         android:id="@+id/obj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Objetivo:"
+        android:text="@string/objetivo"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/container_components"
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/peso"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"/>
 
 
@@ -294,8 +294,8 @@
             android:background="@drawable/button"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
-            android:layout_marginLeft="20dp"
-            android:text="Baixo"/>
+            android:layout_marginStart="20dp"
+            android:text="@string/baixo"/>
 
         <RadioButton
             android:id="@+id/radio_moderado"

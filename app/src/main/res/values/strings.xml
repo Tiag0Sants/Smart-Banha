@@ -8,4 +8,13 @@
     <string name="desempenho">Desempenho</string>
     <string name="atendimento_ao_cliente">Atendimento ao cliente</string>
     <string name="bem_vindo_de_volta">Bem-Vindo de volta!!</string>
+    <string name="sair">Sair</string>
+    <string name="baixo">Baixo</string>
+    <string name="idade">Idade:</string>
+    <string name="digite_sua_idade">Digite sua idade</string>
+    <string name="altura">Altura:</string>
+    <string name="digite_sua_idade123">Digite sua idade</string>
+    <string name="peso_kg">Peso (Kg):</string>
+    <string name="digite_sua_idade321">Digite sua idade</string>
+    <string name="objetivo">Objetivo:</string>
 </resources>

@@ -47,5 +47,9 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-auth:23.0.0")
     implementation("com.google.firebase:firebase-analytics")
+    //noinspection BomWithoutPlatform
     implementation("com.google.firebase:firebase-bom:33.0.0")
+    implementation("com.google.firebase:firebase-firestore:25.0.0")
+
+
 }
