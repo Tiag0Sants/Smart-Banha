@@ -3,16 +3,23 @@ package com.example.prototipo2;
 import java.io.Serializable;
 
 public class HelperClass implements Serializable {
-  private String nome, email, senha, gender;
+    private String nome;
+    private String email;
+    private String senha;
+    private String gender;
     private int age;
     private float weight;
     private float height;
     private String goal;
+    private double imc;
+    private double tmb;
+    private String nivelDeAtividade;
 
-  public HelperClass(){
+    public HelperClass() {
+        // Construtor vazio necessário para Firebase
+    }
 
-  }
-
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -75,5 +82,29 @@ public class HelperClass implements Serializable {
 
     public void setGoal(String goal) {
         this.goal = goal;
+    }
+
+    public double getImc() {
+        return imc;
+    }
+
+    public void setImc(double imc) {
+        this.imc = imc;
+    }
+
+    public double getTmb() {
+        return tmb;
+    }
+
+    public void setTmb(double tmb) {
+        this.tmb = tmb;
+    }
+
+    public String getNivelDeAtividade() {
+        return nivelDeAtividade;
+    }
+
+    public void setNivelDeAtividade(String nivelDeAtividade) {
+        this.nivelDeAtividade = nivelDeAtividade;
     }
 }

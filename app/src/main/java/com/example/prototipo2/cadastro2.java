@@ -1,9 +1,6 @@
 package com.example.prototipo2;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,16 +9,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.SetOptions;
 
 public class cadastro2 extends AppCompatActivity {
 
@@ -29,14 +18,11 @@ public class cadastro2 extends AppCompatActivity {
     RadioGroup generoGroup, objetivoGroup, nivelAtividadeGroup;
     Button finalizarCadastro;
     HelperClass usuario;
-    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro2);
-
-        db = FirebaseFirestore.getInstance();
 
         // Inicializa os componentes da interface
         inicializar();
@@ -66,7 +52,6 @@ public class cadastro2 extends AppCompatActivity {
     }
 
     // Função para calcular a TMB e transferir os dados para a próxima Activity
-    @SuppressLint("NonConstantResourceId")
     private void calcularETransferirTMB() {
         // Obtenção dos valores inseridos
         String strIdade = idade.getText().toString();
@@ -95,16 +80,20 @@ public class cadastro2 extends AppCompatActivity {
             }
 
             double fatorAtividade;
-            if (selectedNivelId == R.id.radio_baixo) {
-                fatorAtividade = 1.2;
-            } else if (selectedNivelId == R.id.radio_moderado) {
-                fatorAtividade = 1.55;
-            } else if (selectedNivelId == R.id.radio_alto) {
-                fatorAtividade = 1.725;
-            } else {
-                fatorAtividade = 1.0;
+            switch (selectedNivelId) {
+                case R.id.radio_baixo:
+                    fatorAtividade = 1.2;
+                    break;
+                case R.id.radio_moderado:
+                    fatorAtividade = 1.55;
+                    break;
+                case R.id.radio_alto:
+                    fatorAtividade = 1.725;
+                    break;
+                default:
+                    fatorAtividade = 1.0;
+                    break;
             }
-
 
             // Calcula a TMB
             double tmb;
@@ -141,30 +130,5 @@ public class cadastro2 extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
-
-
-        // Obtendo a referência da coleção "users"
-        CollectionReference usersCollection = db.collection("users");
-
-        usersCollection.document(usuario.getEmail().replace(".", "_"))
-                .set(usuario, SetOptions.merge()) // Usando merge para mesclar novos dados com os existentes
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        // Sucesso ao salvar os dados
-                        Toast.makeText(cadastro2.this, "Dados salvos com sucesso!", Toast.LENGTH_SHORT).show();
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Falha ao salvar os dados
-                        Toast.makeText(cadastro2.this, "Erro ao salvar os dados: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-
-
     }
 }
