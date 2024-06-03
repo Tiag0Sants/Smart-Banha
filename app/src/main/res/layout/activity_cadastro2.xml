@@ -217,44 +217,40 @@
         >
 
         <RadioButton
-            android:id="@+id/radio_perder"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:button="@null"
-            android:textAlignment="center"
-            android:background="@drawable/button"
-            android:text="Perder peso"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_bold"
-            android:layout_marginLeft="20dp"
-            />
-
-        <RadioButton
             android:id="@+id/radio_manter"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:button="@null"
-            android:textAlignment="center"
-            android:background="@drawable/button"
-            android:text="Manter peso"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_bold"
             android:layout_marginLeft="20dp"
-            />
+            android:background="@drawable/button"
+            android:button="@null"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Manter peso"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radio_perder"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/button"
+            android:button="@null"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Perder peso"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
 
         <RadioButton
             android:id="@+id/radio_ganhar"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:button="@null"
-            android:textAlignment="center"
-            android:background="@drawable/button"
-            android:text="Ganhar peso"
-            android:textColor="@color/white"
-            android:fontFamily="@font/poppins_bold"
             android:layout_marginLeft="20dp"
-            />
-
+            android:background="@drawable/button"
+            android:button="@null"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Ganhar peso"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
 
 
     </RadioGroup>
