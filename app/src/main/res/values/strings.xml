@@ -17,4 +17,7 @@
     <string name="peso_kg">Peso (Kg):</string>
     <string name="digite_sua_idade321">Digite sua idade</string>
     <string name="objetivo">Objetivo:</string>
+    <string name="sua_tmb">Sua TMB é:</string>
+    <string name="seu_imc">Seu IMC é:</string>
+    <string name="imc_resultado">IMC Resultado</string>
 </resources>

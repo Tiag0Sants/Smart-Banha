@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -17,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class cadastro2 extends AppCompatActivity {
 
     EditText idade, peso, altura;
+    TextView imcResultado;
     RadioGroup generoGroup, objetivoGroup, nivelAtividadeGroup;
     Button finalizarCadastro;
     HelperClass usuario;
@@ -38,6 +40,7 @@ public class cadastro2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 calcularETransferirTMB(); // Chama a função para calcular e transferir a TMB
+                calcularIMC(); // Chama a função para calcular o IMC
             }
         });
     }
@@ -47,6 +50,7 @@ public class cadastro2 extends AppCompatActivity {
         idade = findViewById(R.id.valor_idade);
         peso = findViewById(R.id.valor_peso);
         altura = findViewById(R.id.valor_altura);
+        imcResultado = findViewById(R.id.imc_resultado); // TextView para mostrar o resultado do IMC
         generoGroup = findViewById(R.id.genero_grupo);
         objetivoGroup = findViewById(R.id.obj_grupo);
         nivelAtividadeGroup = findViewById(R.id.nvl);
@@ -122,6 +126,23 @@ public class cadastro2 extends AppCompatActivity {
             finish(); // Fecha a Activity após o cadastro
         } else {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void calcularIMC() {
+        String strPeso = peso.getText().toString();
+        String strAltura = altura.getText().toString();
+
+        if (!strPeso.isEmpty() && !strAltura.isEmpty()) {
+            float peso = Float.parseFloat(strPeso);
+            float altura = Float.parseFloat(strAltura);
+
+            double imc = peso / (altura * altura);
+
+            // Exibe o resultado do IMC no TextView imcResultado
+            imcResultado.setText(String.format("Seu IMC é: %.2f", imc));
+        } else {
+            Toast.makeText(this, "Preencha os campos de peso e altura para calcular o IMC", Toast.LENGTH_SHORT).show();
         }
     }
 }
