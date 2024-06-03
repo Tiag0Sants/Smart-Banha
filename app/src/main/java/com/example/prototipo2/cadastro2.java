@@ -141,7 +141,7 @@ public class cadastro2 extends AppCompatActivity {
             double imc = peso / (altura * altura);
 
             // Exibe o resultado do IMC no TextView imcResultado
-            textViewIMC.setText(();
+            textViewIMC.setText(String.format("Seu IMC é: %.2f", imc));
         } else {
             Toast.makeText(this, "Preencha os campos de peso e altura para calcular o IMC", Toast.LENGTH_SHORT).show();
         }
