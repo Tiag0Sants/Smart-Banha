@@ -85,27 +85,46 @@
         app:layout_constraintStart_toStartOf="@id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/dados"
         android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
         >
 
         <RadioButton
             android:id="@+id/radio_male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
             android:button="@null"
-            android:background="?android:attr/selectableItemBackground"
-            android:drawableStart="@drawable/male"
+            android:background="@drawable/radio_genero_background"
             android:layout_marginStart="10dp"
             />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="-65dp"
+            android:src="@drawable/male_symbol"
+            app:layout_constraintEnd_toEndOf="@+id/radio_male"
+            app:layout_constraintStart_toStartOf="@+id/radio_male"
+            app:layout_constraintTop_toTopOf="@+id/radio_male" />
 
         <RadioButton
             android:id="@+id/radio_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
+            android:background="@drawable/radio_genero2_background"
             android:button="@null"
             android:drawableStart="@drawable/female" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="-65dp"
+            android:src="@drawable/female_symbol"
+            app:layout_constraintEnd_toEndOf="@+id/radio_female"
+            app:layout_constraintStart_toStartOf="@+id/radio_female"
+            app:layout_constraintTop_toTopOf="@+id/radio_female" />
     </RadioGroup>
+
+
 
     <TextView
         android:id="@+id/idade"
@@ -130,7 +149,7 @@
         app:layout_constraintStart_toEndOf="@+id/container_components"
         app:layout_constraintTop_toBottomOf="@+id/genero_grupo"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="-1dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/digite_sua_idade"
         style="@style/edit_text_senha" />
 
@@ -153,7 +172,7 @@
         style="@style/edit_text_senha"
         android:layout_width="60dp"
         android:layout_height="48dp"
-        android:layout_marginTop="-1dp"
+        android:layout_marginTop="10dp"
         android:hint="@string/digite_sua_idade123"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/container_components"
@@ -217,40 +236,44 @@
         >
 
         <RadioButton
-            android:id="@+id/radio_manter"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/button"
-            android:button="@null"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Manter peso"
-            android:textAlignment="center"
-            android:textColor="@color/white" />
-
-        <RadioButton
             android:id="@+id/radio_perder"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/button"
             android:button="@null"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Perder peso"
             android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:background="@drawable/radio_escolhas_background"
+            android:text="Perder peso"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginLeft="20dp"
+            />
+
+        <RadioButton
+            android:id="@+id/radio_manter"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:textAlignment="center"
+            android:background="@drawable/radio_escolhas_background"
+            android:text="Manter peso"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginLeft="20dp"
+            />
 
         <RadioButton
             android:id="@+id/radio_ganhar"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/button"
             android:button="@null"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Ganhar peso"
             android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:background="@drawable/radio_escolhas_background"
+            android:text="Ganhar peso"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginLeft="20dp"
+            />
+
 
 
     </RadioGroup>
@@ -287,7 +310,7 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:textAlignment="center"
-            android:background="@drawable/button"
+            android:background="@drawable/radio_escolhas_background"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:layout_marginStart="20dp"
@@ -299,7 +322,7 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:textAlignment="center"
-            android:background="@drawable/button"
+            android:background="@drawable/radio_escolhas_background"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:layout_marginLeft="20dp"
@@ -311,7 +334,7 @@
             android:layout_height="wrap_content"
             android:button="@null"
             android:textAlignment="center"
-            android:background="@drawable/button"
+            android:background="@drawable/radio_escolhas_background"
             android:textColor="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:layout_marginLeft="20dp"
