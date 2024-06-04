@@ -1,7 +1,6 @@
 package com.example.prototipo2;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -18,7 +16,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class cadastro2 extends AppCompatActivity {
 
     EditText idade, peso, altura;
-    TextView textViewIMC;
     RadioGroup generoGroup, objetivoGroup, nivelAtividadeGroup;
     Button finalizarCadastro;
     HelperClass usuario;
@@ -39,8 +36,7 @@ public class cadastro2 extends AppCompatActivity {
         finalizarCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcularETransferirTMB(); // Chama a função para calcular e transferir a TMB
-                calcularIMC(); // Chama a função para calcular o IMC
+                calcularETransferirTMB(); // Chama a função para calcular e transferir a TMB e IMC
             }
         });
     }
@@ -50,7 +46,6 @@ public class cadastro2 extends AppCompatActivity {
         idade = findViewById(R.id.valor_idade);
         peso = findViewById(R.id.valor_peso);
         altura = findViewById(R.id.valor_altura);
-        textViewIMC = findViewById(R.id.textViewIMC); // TextView para mostrar o resultado do IMC
         generoGroup = findViewById(R.id.genero_grupo);
         objetivoGroup = findViewById(R.id.obj_grupo);
         nivelAtividadeGroup = findViewById(R.id.nvl);
@@ -102,9 +97,7 @@ public class cadastro2 extends AppCompatActivity {
 
             double tmbFinal = tmb * fatorAtividade;
 
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("TMB_RESULTADO", tmbFinal);
-            startActivity(intent);
+            double imc = peso / ((altura / 100) * (altura / 100)); // Calculo do IMC
 
             usuario.setAge(idade);
             usuario.setWeight(peso);
@@ -123,27 +116,15 @@ public class cadastro2 extends AppCompatActivity {
                     .addOnSuccessListener(aVoid -> Toast.makeText(cadastro2.this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show())
                     .addOnFailureListener(e -> Toast.makeText(cadastro2.this, "Erro ao realizar cadastro", Toast.LENGTH_SHORT).show());
 
+            // Passa os dados para a nova Activity
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("TMB_RESULTADO", tmbFinal);
+            intent.putExtra("IMC_RESULTADO", imc);
+            startActivity(intent);
+
             finish(); // Fecha a Activity após o cadastro
         } else {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @SuppressLint("DefaultLocale")
-    private void calcularIMC() {
-        String strPeso = peso.getText().toString();
-        String strAltura = altura.getText().toString();
-
-        if (!strPeso.isEmpty() && !strAltura.isEmpty()) {
-            float peso = Float.parseFloat(strPeso);
-            float altura = Float.parseFloat(strAltura);
-
-            double imc = peso / (altura * altura);
-
-            // Exibe o resultado do IMC no TextView imcResultado
-            textViewIMC.setText(String.format("Seu IMC é: %.2f", imc));
-        } else {
-            Toast.makeText(this, "Preencha os campos de peso e altura para calcular o IMC", Toast.LENGTH_SHORT).show();
         }
     }
 }

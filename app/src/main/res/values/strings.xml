@@ -20,4 +20,7 @@
     <string name="sua_tmb">Sua TMB é:</string>
     <string name="seu_imc">Seu IMC é:</string>
     <string name="imc_resultado">IMC Resultado</string>
+    <string name="seu_imc123">Seu IMC é:</string>
+    <string name="seu_imc1234">Seu IMC é:</string>
+    <string name="sua_tmb123">Sua TMB é:</string>
 </resources>

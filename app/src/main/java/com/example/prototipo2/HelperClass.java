@@ -3,29 +3,33 @@ package com.example.prototipo2;
 import java.io.Serializable;
 
 public class HelperClass implements Serializable {
-    private String nome;
+
+    private String name;
     private String email;
-    private String senha;
-    private String gender;
+    private String password;
     private int age;
     private float weight;
     private float height;
+    private String gender;
     private String goal;
-    private double imc;
     private double tmb;
-    private String nivelDeAtividade;
+    private double imc;
 
-    public HelperClass() {
-        // Construtor vazio necessário para Firebase
+    // Construtores, getters e setters
+
+    public HelperClass(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
-    // Getters e Setters
-    public String getNome() {
-        return nome;
+    // Getters e setters para todos os campos
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -36,20 +40,12 @@ public class HelperClass implements Serializable {
         this.email = email;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getAge() {
@@ -76,20 +72,20 @@ public class HelperClass implements Serializable {
         this.height = height;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getGoal() {
         return goal;
     }
 
     public void setGoal(String goal) {
         this.goal = goal;
-    }
-
-    public double getImc() {
-        return imc;
-    }
-
-    public void setImc(double imc) {
-        this.imc = imc;
     }
 
     public double getTmb() {
@@ -100,11 +96,11 @@ public class HelperClass implements Serializable {
         this.tmb = tmb;
     }
 
-    public String getNivelDeAtividade() {
-        return nivelDeAtividade;
+    public double getImc() {
+        return imc;
     }
 
-    public void setNivelDeAtividade(String nivelDeAtividade) {
-        this.nivelDeAtividade = nivelDeAtividade;
+    public void setImc(double imc) {
+        this.imc = imc;
     }
 }

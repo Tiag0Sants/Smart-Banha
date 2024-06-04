@@ -23,6 +23,9 @@
     <color name="cadastro1">#880DC2</color>
     <color name="cadastro2">#4F00D0</color>
 
+    //cor do button selecionado
+    <color name="dourado">#ffa500</color>
+
     //transparente
     <color name="transparente">#00FFFF77</color>
 </resources>
