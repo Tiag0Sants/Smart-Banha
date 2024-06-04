@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class cadastro2 extends AppCompatActivity {
 
     EditText idade, peso, altura;
-    TextView imcResultado;
+    TextView textViewIMC;
     RadioGroup generoGroup, objetivoGroup, nivelAtividadeGroup;
     Button finalizarCadastro;
     HelperClass usuario;
@@ -50,7 +50,7 @@ public class cadastro2 extends AppCompatActivity {
         idade = findViewById(R.id.valor_idade);
         peso = findViewById(R.id.valor_peso);
         altura = findViewById(R.id.valor_altura);
-        imcResultado = findViewById(R.id.imc_resultado); // TextView para mostrar o resultado do IMC
+        textViewIMC = findViewById(R.id.textViewIMC); // TextView para mostrar o resultado do IMC
         generoGroup = findViewById(R.id.genero_grupo);
         objetivoGroup = findViewById(R.id.obj_grupo);
         nivelAtividadeGroup = findViewById(R.id.nvl);
@@ -129,6 +129,7 @@ public class cadastro2 extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("DefaultLocale")
     private void calcularIMC() {
         String strPeso = peso.getText().toString();
         String strAltura = altura.getText().toString();
@@ -140,7 +141,7 @@ public class cadastro2 extends AppCompatActivity {
             double imc = peso / (altura * altura);
 
             // Exibe o resultado do IMC no TextView imcResultado
-            imcResultado.setText(String.format("Seu IMC é: %.2f", imc));
+            textViewIMC.setText(String.format("Seu IMC é: %.2f", imc));
         } else {
             Toast.makeText(this, "Preencha os campos de peso e altura para calcular o IMC", Toast.LENGTH_SHORT).show();
         }
