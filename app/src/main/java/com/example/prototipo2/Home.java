@@ -11,6 +11,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     ImageView imagem_perfil;
     Button atendimento;
     Button desempenho; // Botão para desempenho
+    Button platinhaTreino; // Botão para planilhas de treino
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         desempenho = findViewById(R.id.Desempenho); // Botão para desempenho
         desempenho.setOnClickListener(this); // Configurar o OnClickListener
+
+        platinhaTreino = findViewById(R.id.platinha_treino); // Botão para planilhas de treino
+        platinhaTreino.setOnClickListener(this); // Configurar o OnClickListener
     }
 
     @Override
@@ -43,6 +47,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         if (v.getId() == R.id.Desempenho) { // Se clicou no botão desempenho
             Intent tela = new Intent(this, MainActivity.class); // Direcionar para a MainActivity
+            startActivity(tela);
+        }
+
+        if (v.getId() == R.id.platinha_treino) { // Se clicou no botão planilhas de treino
+            Intent tela = new Intent(this, treinos.class); // Direcionar para a página de treinos
             startActivity(tela);
         }
     }

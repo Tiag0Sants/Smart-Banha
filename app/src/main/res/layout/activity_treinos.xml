@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".treinos">
+
+    <ImageView
+        android:id="@+id/btnvoltar"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/planilha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Planilhas de treino"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPerderPeso"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:text="Perder Peso"
+        android:textSize="30dp"
+        android:background="@drawable/perder"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/planilha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnManterPeso"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:text="Manter Peso"
+        android:textSize="30dp"
+        android:background="@drawable/manter"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btnPerderPeso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGanharPeso"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:text="Ganhar Peso"
+        android:textSize="30dp"
+        android:background="@drawable/ganhar"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btnManterPeso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintWidth_percent="0.8"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
