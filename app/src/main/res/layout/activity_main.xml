@@ -39,70 +39,105 @@
         app:layout_constraintTop_toTopOf="@+id/imagem_perfil"
         android:layout_marginStart="10dp" />
 
+    <TextView
+        android:id="@+id/textViewSaudacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olá, seja bem-vindo!"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toEndOf="@id/imagem_perfil"
+        app:layout_constraintTop_toBottomOf="@id/textViewNomeUsuario"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp" />
+
     <View
+        android:id="@+id/tmb"
         android:layout_width="380dp"
         android:layout_height="60dp"
-        android:id="@+id/tmb"
         android:layout_marginStart="15dp"
         style="@style/button_opcoes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagem_perfil"
-        />
+        app:layout_constraintTop_toBottomOf="@id/imagem_perfil" />
+
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/tmb"
-        app:layout_constraintTop_toTopOf="@+id/tmb"
-        app:layout_constraintStart_toStartOf="@+id/tmb"
-        app:layout_constraintEnd_toEndOf="@+id/tmb"
-        android:layout_marginStart="-300dp"
+        app:layout_constraintTop_toTopOf="@id/tmb"
+        app:layout_constraintStart_toStartOf="@id/tmb"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/textViewTMB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-70dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="@string/sua_tmb123"
+        android:text="Sua TMB:"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/tmb"
-        app:layout_constraintStart_toStartOf="@+id/tmb"
-        app:layout_constraintTop_toTopOf="@+id/tmb" />
+        app:layout_constraintStart_toStartOf="@id/tmb"
+        app:layout_constraintStart_toEndOf="@id/tmb"
+        app:layout_constraintTop_toTopOf="@id/tmb" />
 
     <View
+        android:id="@+id/imc"
         android:layout_width="380dp"
         android:layout_height="60dp"
-        android:id="@+id/imc"
         android:layout_marginStart="15dp"
         style="@style/button_opcoes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tmb" />
+        app:layout_constraintTop_toBottomOf="@id/tmb" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/imc"
-        app:layout_constraintTop_toTopOf="@+id/imc"
-        app:layout_constraintStart_toStartOf="@+id/imc"
-        app:layout_constraintEnd_toEndOf="@+id/imc"
-        android:layout_marginStart="-300dp"
+        app:layout_constraintTop_toTopOf="@id/imc"
+        app:layout_constraintStart_toStartOf="@id/imc"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/imc_resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/seu_imc1234"
+        android:text="Seu IMC:"
         android:textSize="20sp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/poppins_bold"
-        app:layout_constraintTop_toTopOf="@+id/imc"
-        app:layout_constraintStart_toStartOf="@+id/imc"
-        app:layout_constraintEnd_toEndOf="@+id/imc"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="-70dp" />
+        app:layout_constraintStart_toStartOf="@id/imc"
+        app:layout_constraintStart_toEndOf="@id/imc"
+        app:layout_constraintTop_toTopOf="@id/imc"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textViewInformacoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informações Adicionais"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/poppins_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imc"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/buttonAcao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clique Aqui"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewInformacoes"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
