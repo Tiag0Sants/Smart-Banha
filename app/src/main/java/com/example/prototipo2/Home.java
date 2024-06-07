@@ -41,7 +41,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             startActivity(tela);
         }
 
-        if (v.getId() == R.id.Desempenho) { // Se clicou no botão desempenho
+        if (v.getId() == R.id.Desempenho) {
+            // Se clicou no botão desempenho
             Intent tela = new Intent(this, MainActivity.class); // Direcionar para a MainActivity
             startActivity(tela);
         }
