@@ -20,21 +20,36 @@ public class MainActivity extends AppCompatActivity {
 
         // Atualiza o TextView com o valor da TMB
         TextView textViewTMB = findViewById(R.id.textViewTMB);
-        textViewTMB.setText("Sua TMB é: " + String.format("%.2f", tmb));
+        if (textViewTMB != null) {
+            textViewTMB.setText(String.format("Sua TMB é: %.2f", tmb));
+        }
 
         // Atualiza o TextView com o valor do IMC
         TextView textViewIMC = findViewById(R.id.imc_resultado);
-        textViewIMC.setText("Seu IMC é: " + String.format("%.2f", imc));
+        if (textViewIMC != null) {
+            textViewIMC.setText(String.format("Seu IMC é: %.2f", imc));
+        }
+
+        // Recupera o nome do usuário da Intent
+        String nomeUsuario = getIntent().getStringExtra("nomeUsuario");
+
+        // Atualiza o TextView com o nome do usuário
+        TextView textViewNomeUsuario = findViewById(R.id.textViewNomeUsuario);
+        if (textViewNomeUsuario != null && nomeUsuario != null) {
+            textViewNomeUsuario.setText(nomeUsuario);
+        }
 
         // Configura o botão de voltar para navegar para a HomeActivity
         ImageView btnVoltar = findViewById(R.id.btnvoltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Home.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        if (btnVoltar != null) {
+            btnVoltar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, Home.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        }
     }
 }
