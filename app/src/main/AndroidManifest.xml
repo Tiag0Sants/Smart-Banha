@@ -33,6 +33,18 @@
             android:name=".cadastro"
             android:exported="false" />
         <activity
+            android:name=".treinos"
+            android:exported="false" />
+        <activity
+            android:name=".ganharpeso"
+            android:exported="false" />
+        <activity
+            android:name=".manterpeso"
+            android:exported="false" />
+        <activity
+            android:name=".ganharpeso"
+            android:exported="false" />
+        <activity
             android:name=".Inicial"
             android:exported="true">
             <intent-filter>

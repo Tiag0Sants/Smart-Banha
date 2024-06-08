@@ -2,6 +2,7 @@ package com.example.prototipo2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,9 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Recebe os valores da TMB e IMC passados pela Intent
-        double tmb = getIntent().getDoubleExtra("TMB_RESULTADO", 0.0);
-        double imc = getIntent().getDoubleExtra("IMC_RESULTADO", 0.0);
+        // Recupera os dados de TMB e IMC de SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        double tmb = sharedPreferences.getFloat("TMB_RESULTADO", 0);
+        double imc = sharedPreferences.getFloat("IMC_RESULTADO", 0);
 
         // Atualiza o TextView com o valor da TMB
         TextView textViewTMB = findViewById(R.id.textViewTMB);
@@ -30,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
             textViewIMC.setText(String.format("Seu IMC é: %.2f", imc));
         }
 
-        // Recupera o nome do usuário da Intent
-        String nomeUsuario = getIntent().getStringExtra("nomeUsuario");
+        // Recupera o nome do usuário de SharedPreferences
+        String nomeUsuario = sharedPreferences.getString("nomeUsuario", "Usuário");
 
         // Atualiza o TextView com o nome do usuário
         TextView textViewNomeUsuario = findViewById(R.id.textViewNomeUsuario);
-        if (textViewNomeUsuario != null && nomeUsuario != null) {
+        if (textViewNomeUsuario != null) {
             textViewNomeUsuario.setText(nomeUsuario);
         }
 
