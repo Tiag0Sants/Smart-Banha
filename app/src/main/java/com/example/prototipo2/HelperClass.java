@@ -3,33 +3,22 @@ package com.example.prototipo2;
 import java.io.Serializable;
 
 public class HelperClass implements Serializable {
-
-    private String name;
-    private String email;
-    private String password;
+    private String nome, email, senha, gender;
     private int age;
     private float weight;
     private float height;
-    private String gender;
     private String goal;
-    private double tmb;
-    private double imc;
 
-    // Construtores, getters e setters
+    public HelperClass(){
 
-    public HelperClass(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
     }
 
-    // Getters e setters para todos os campos
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -40,12 +29,20 @@ public class HelperClass implements Serializable {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public int getAge() {
@@ -72,35 +69,11 @@ public class HelperClass implements Serializable {
         this.height = height;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public String getGoal() {
         return goal;
     }
 
     public void setGoal(String goal) {
         this.goal = goal;
-    }
-
-    public double getTmb() {
-        return tmb;
-    }
-
-    public void setTmb(double tmb) {
-        this.tmb = tmb;
-    }
-
-    public double getImc() {
-        return imc;
-    }
-
-    public void setImc(double imc) {
-        this.imc = imc;
     }
 }

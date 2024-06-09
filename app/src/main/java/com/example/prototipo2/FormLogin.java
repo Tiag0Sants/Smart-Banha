@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ImageView;
+
 
 import com.example.prototipo2.Util.ConfiguraBd;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -43,6 +45,16 @@ public class FormLogin extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "Botão login clicado");
                 validarLogin(v);
+            }
+        });
+
+        // Adicione o código para a ImageView de voltar
+        ImageView btnVoltar = findViewById(R.id.btnvoltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Encerra a atividade atual e retorna à tela inicial
+                finish();
             }
         });
     }

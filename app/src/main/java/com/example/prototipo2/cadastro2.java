@@ -3,6 +3,7 @@ package com.example.prototipo2;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class cadastro2 extends AppCompatActivity {
 
-    EditText idade, peso, altura;
+    EditText nome, idade, peso, altura;
     RadioGroup generoGroup, objetivoGroup, nivelAtividadeGroup;
     Button finalizarCadastro;
     HelperClass usuario;
@@ -36,7 +37,7 @@ public class cadastro2 extends AppCompatActivity {
         finalizarCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcularETransferirTMB(); // Chama a função para calcular e transferir a TMB e IMC
+                calcularETransferirDados(); // Chama a função para calcular e transferir os dados
             }
         });
     }
@@ -53,78 +54,76 @@ public class cadastro2 extends AppCompatActivity {
     }
 
     @SuppressLint("NonConstantResourceId")
-    private void calcularETransferirTMB() {
+    private void calcularETransferirDados() {
+        String strNome = nome.getText().toString();
         String strIdade = idade.getText().toString();
         String strPeso = peso.getText().toString();
         String strAltura = altura.getText().toString();
 
-        if (!strIdade.isEmpty() && !strPeso.isEmpty() && !strAltura.isEmpty()) {
+        if (!strNome.isEmpty() && !strIdade.isEmpty() && !strPeso.isEmpty() && !strAltura.isEmpty()) {
+            // Recuperar os valores dos campos
             int idade = Integer.parseInt(strIdade);
             float peso = Float.parseFloat(strPeso);
             float altura = Float.parseFloat(strAltura);
-
             int selectedGeneroId = generoGroup.getCheckedRadioButtonId();
-            if (selectedGeneroId == -1) {
-                Toast.makeText(this, "Por favor, selecione o sexo.", Toast.LENGTH_SHORT).show();
-                return;
-            }
             RadioButton selectedGenero = findViewById(selectedGeneroId);
             String genero = selectedGenero.getText().toString();
-
             int selectedNivelId = nivelAtividadeGroup.getCheckedRadioButtonId();
-            if (selectedNivelId == -1) {
-                Toast.makeText(this, "Por favor, selecione o nível de atividade física.", Toast.LENGTH_SHORT).show();
-                return;
-            }
+            double fatorAtividade = obterFatorAtividade(selectedNivelId);
+            String objetivo = obterObjetivo();
 
-            double fatorAtividade;
-            if (selectedNivelId == R.id.radio_baixo) {
-                fatorAtividade = 1.2;
-            } else if (selectedNivelId == R.id.radio_moderado) {
-                fatorAtividade = 1.55;
-            } else if (selectedNivelId == R.id.radio_alto) {
-                fatorAtividade = 1.725;
-            } else {
-                fatorAtividade = 1.0;
-            }
-
-            double tmb;
-            if (genero.equalsIgnoreCase("masculino")) {
-                tmb = 88.36 + (13.4 * peso) + (4.8 * altura) - (5.7 * idade);
-            } else {
-                tmb = 447.6 + (9.2 * peso) + (3.1 * altura) - (4.3 * idade);
-            }
-
-            double tmbFinal = tmb * fatorAtividade;
-
-            double imc = peso / ((altura / 100) * (altura / 100)); // Calculo do IMC
-
+            // Armazenar os dados no objeto HelperClass
             usuario.setAge(idade);
             usuario.setWeight(peso);
             usuario.setHeight(altura);
             usuario.setGender(genero);
+            usuario.setGoal(objetivo);
 
-            int selectedObjetivoId = objetivoGroup.getCheckedRadioButtonId();
-            if (selectedObjetivoId != -1) {
-                RadioButton selectedObjetivo = findViewById(selectedObjetivoId);
-                usuario.setGoal(selectedObjetivo.getText().toString());
-            }
+            // Armazenar os dados no SharedPreferences
+            SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("nomeUsuario", strNome);
+            editor.putInt("idadeUsuario", idade);
+            editor.putFloat("pesoUsuario", peso);
+            editor.putFloat("alturaUsuario", altura);
+            editor.putString("generoUsuario", genero);
+            editor.putString("objetivoUsuario", objetivo);
+            editor.apply();
 
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            db.collection("users").document(usuario.getEmail().replace(".", "_"))
-                    .set(usuario)
-                    .addOnSuccessListener(aVoid -> Toast.makeText(cadastro2.this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show())
-                    .addOnFailureListener(e -> Toast.makeText(cadastro2.this, "Erro ao realizar cadastro", Toast.LENGTH_SHORT).show());
-
-            // Passa os dados para a nova Activity
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("TMB_RESULTADO", tmbFinal);
-            intent.putExtra("IMC_RESULTADO", imc);
-            startActivity(intent);
-
-            finish(); // Fecha a Activity após o cadastro
+            // Chamar a função para calcular TMB e IMC e navegar para a próxima Activity
+            calcularETransferirTMB();
         } else {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    // Função para obter o fator de atividade com base no ID do RadioButton selecionado
+    private double obterFatorAtividade(int selectedId) {
+        double fatorAtividade = 1.0;
+        if (selectedId == R.id.radio_baixo) {
+            fatorAtividade = 1.2;
+        } else if (selectedId == R.id.radio_moderado) {
+            fatorAtividade = 1.55;
+        } else if (selectedId == R.id.radio_alto) {
+            fatorAtividade = 1.725;
+        }
+        return fatorAtividade;
+    }
+
+
+    // Função para obter o objetivo com base no RadioButton selecionado
+    private String obterObjetivo() {
+        String objetivo = "";
+        int selectedObjetivoId = objetivoGroup.getCheckedRadioButtonId();
+        if (selectedObjetivoId != -1) {
+            RadioButton selectedObjetivo = findViewById(selectedObjetivoId);
+            objetivo = selectedObjetivo.getText().toString();
+        }
+        return objetivo;
+    }
+
+    // Função para calcular TMB e IMC e navegar para a próxima Activity
+    private void calcularETransferirTMB() {
+        // Implemente o cálculo da TMB e IMC e a navegação para a próxima Activity aqui
     }
 }
