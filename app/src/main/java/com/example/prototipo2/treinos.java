@@ -40,15 +40,7 @@ public class treinos extends AppCompatActivity {
                 finish();
             }
         });
-        // Configurando o botão para a página de Perder Peso
-        ImageView btnPerderPeso = findViewById(R.id.btnPerderPeso);
-        btnPerderPeso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(treinos.this, perderpeso.class);
-                startActivity(intent);
-            }
-        });
+
 
 
 
