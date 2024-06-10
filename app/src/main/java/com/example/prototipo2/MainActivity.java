@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,5 +54,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+
+        // Encontra e configura o botão "buttonAcao"
+        Button buttonAcao = findViewById(R.id.buttonAcao);
+        buttonAcao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Inicia a atividade de health_tips
+                Intent intent = new Intent(MainActivity.this, health_tips.class);
+                startActivity(intent);
+            }
+        });
     }
 }
