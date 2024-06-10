@@ -31,15 +31,15 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
         // Recupera os dados de SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String nomeUsuario = sharedPreferences.getString("nomeUsuario", "Usuário");
-        String idadeUsuario = sharedPreferences.getString("idadeUsuario", "N/A");
-        String alturaUsuario = sharedPreferences.getString("alturaUsuario", "N/A");
+        int idadeUsuario = sharedPreferences.getInt("idadeUsuario", 0); // Modificado para recuperar um int
+        float alturaUsuario = sharedPreferences.getFloat("alturaUsuario", 0); // Modificado para recuperar um float
         String nivelAtividadeUsuario = sharedPreferences.getString("nivelAtividadeUsuario", "N/A");
         String objetivoUsuario = sharedPreferences.getString("objetivoUsuario", "N/A");
 
         // Define os valores nas TextViews
         perfilNome.setText(nomeUsuario);
-        perfilIdade.setText(idadeUsuario);
-        perfilAltura.setText(alturaUsuario);
+        perfilIdade.setText(String.valueOf(idadeUsuario)); // Convertido para String
+        perfilAltura.setText(String.valueOf(alturaUsuario)); // Convertido para String
         perfilNivelAtividade.setText(nivelAtividadeUsuario);
         perfilObjetivo.setText(objetivoUsuario);
     }
