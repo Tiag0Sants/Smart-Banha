@@ -11,10 +11,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,35 +69,76 @@ public class cadastro extends AppCompatActivity {
 
         Log.d(TAG, "Validando campos");
 
-        if (!nome.isEmpty()){
-            if (!email.isEmpty()){
-                if (!senha.isEmpty()){
+        if (!nome.isEmpty() && isNomeValido(nome)){
+            if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                if (!senha.isEmpty() && isSenhaForte(senha)){
                     if(!confirmaSenha.isEmpty()){
-                        usuario = new HelperClass();
-                        usuario.setNome(nome);
-                        usuario.setEmail(email);
-                        usuario.setSenha(senha);
-
-                        // Cadastrar usuário
-                        cadastrarUsuario(nome);
+                        verificarEmailFirebase(email, nome);
                     }else{
                         Toast.makeText(this, "Confirme a senha", Toast.LENGTH_SHORT).show();
                     }
 
                 }else{
-                    Log.d(TAG, "Campo senha vazio");
-                    Toast.makeText(this, "Preencha a senha", Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "Campo senha vazio ou fraca");
+                    Toast.makeText(this, "A senha deve ter pelo menos 6 caracteres, uma letra maiúscula, uma letra minúscula, um número e um caractere especial.", Toast.LENGTH_LONG).show();
                 }
 
             }else{
-                Log.d(TAG, "Campo email vazio");
-                Toast.makeText(this, "Preencha o email", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Campo email vazio ou inválido");
+                Toast.makeText(this, "Preencha um email válido", Toast.LENGTH_SHORT).show();
             }
 
         }else {
-            Log.d(TAG, "Campo nome vazio");
-            Toast.makeText(this, "Preencha o nome", Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Campo nome vazio ou inválido");
+            Toast.makeText(this, "Preencha um nome válido", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private boolean isNomeValido(String nome) {
+        // Nome deve ter pelo menos 2 caracteres e apenas letras e espaços
+        return nome.matches("^[\\p{L} .'-]+$");
+    }
+
+    private boolean isSenhaForte(String senha) {
+        boolean isForte = true;
+        if (senha.length() < 6) {
+            isForte = false;
+        }
+        if (!senha.matches(".*[A-Z].*")) {
+            isForte = false;
+        }
+        if (!senha.matches(".*[a-z].*")) {
+            isForte = false;
+        }
+        if (!senha.matches(".*\\d.*")) {
+            isForte = false;
+        }
+        if (!senha.matches(".*[@#$%^&+=!].*")) {
+            isForte = false;
+        }
+        return isForte;
+    }
+
+    private void verificarEmailFirebase(String email, String nome) {
+        mAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+            @Override
+            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                if (task.isSuccessful()) {
+                    boolean isNewUser = task.getResult().getSignInMethods().isEmpty();
+                    if (isNewUser) {
+                        usuario = new HelperClass();
+                        usuario.setNome(nome);
+                        usuario.setEmail(email);
+                        usuario.setSenha(cadastro_senha.getText().toString());
+                        cadastrarUsuario(nome);
+                    } else {
+                        Toast.makeText(cadastro.this, "Este email já está em uso!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(cadastro.this, "Erro ao verificar email!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void cadastrarUsuario(String nome){

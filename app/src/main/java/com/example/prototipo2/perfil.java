@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-<<<<<<<<< Temporary merge branch 1
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -18,13 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class perfil extends AppCompatActivity implements View.OnClickListener {
     ImageView btnvoltar;
     TextView perfil_nome, perfil_idade, perfil_altura, perfil_atividade, perfil_objetivo;
-=========
-import android.widget.Toast;
 
-public class perfil extends AppCompatActivity implements View.OnClickListener {
-    ImageView btnvoltar;
-    TextView nome;
->>>>>>>>> Temporary merge branch 2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +27,6 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_perfil);
 
         btnvoltar = findViewById(R.id.btnvoltar);
-<<<<<<<<< Temporary merge branch 1
         btnvoltar.setOnClickListener(this);
 
         // Inicializa as TextViews para exibir as informações do perfil do usuário
@@ -79,10 +73,9 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
                 }
             });
         }
-=========
         btnvoltar.setOnClickListener(this);  // Setting the onClickListener for the back button
 
-        nome = findViewById(R.id.perfil_nome);
+        perfil_nome = findViewById(R.id.perfil_nome);
 
         // Assume that the email is passed via Intent from the previous activity
         String email = getIntent().getStringExtra("USER_EMAIL");
@@ -98,7 +91,7 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
         firestoreHelper.getUserData(email, new FirestoreHelper.FirestoreCallback() {
             @Override
             public void onCallback(String name) {
-                nome.setText(name);
+                perfil_nome.setText(name);
             }
 
             @Override
@@ -106,7 +99,7 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
                 Toast.makeText(perfil.this, error, Toast.LENGTH_SHORT).show();
             }
         });
->>>>>>>>> Temporary merge branch 2
+
     }
 
     @Override

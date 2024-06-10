@@ -15,18 +15,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Recupera os dados de TMB e IMC de SharedPreferences
+//         Recupera os dados de TMB e IMC de SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         double tmb = sharedPreferences.getFloat("TMB_RESULTADO", 0);
         double imc = sharedPreferences.getFloat("IMC_RESULTADO", 0);
 
-        // Atualiza o TextView com o valor da TMB
+//        // Atualiza o TextView com o valor da TMB
         TextView textViewTMB = findViewById(R.id.textViewTMB);
         if (textViewTMB != null) {
             textViewTMB.setText(String.format("Sua TMB é: %.2f", tmb));
         }
 
-        // Atualiza o TextView com o valor do IMC
+//        // Atualiza o TextView com o valor do IMC
         TextView textViewIMC = findViewById(R.id.imc_resultado);
         if (textViewIMC != null) {
             textViewIMC.setText(String.format("Seu IMC é: %.2f", imc));

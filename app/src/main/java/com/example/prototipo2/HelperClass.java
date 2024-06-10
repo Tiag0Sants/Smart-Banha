@@ -3,15 +3,13 @@ package com.example.prototipo2;
 import java.io.Serializable;
 
 public class HelperClass implements Serializable {
-    private String nome, email, senha, gender;
+    private String nome, email, senha, gender, goal;
     private int age;
-    private float weight;
-    private float height;
-    private String goal;
+    private float weight, height;
+    private double tmb;
+    private float imc;
 
-    public HelperClass(){
-
-    }
+    // Getters e setters
 
     public String getNome() {
         return nome;
@@ -45,6 +43,14 @@ public class HelperClass implements Serializable {
         this.gender = gender;
     }
 
+    public String getGoal() {
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
+    }
+
     public int getAge() {
         return age;
     }
@@ -61,7 +67,8 @@ public class HelperClass implements Serializable {
         this.weight = weight;
     }
 
-    public float getHeight() {
+    public float getHeight()
+    {
         return height;
     }
 
@@ -69,11 +76,19 @@ public class HelperClass implements Serializable {
         this.height = height;
     }
 
-    public String getGoal() {
-        return goal;
+    public double getTmb() {
+        return tmb;
     }
 
-    public void setGoal(String goal) {
-        this.goal = goal;
+    public void setTmb(double tmb) {
+        this.tmb = tmb;
+    }
+
+    public float getImc() {
+        return imc;
+    }
+
+    public void setImc(float imc) {
+        this.imc = imc;
     }
 }
