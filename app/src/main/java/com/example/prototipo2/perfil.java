@@ -41,7 +41,7 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
         perfilIdade.setText(idadeUsuario);
         perfilAltura.setText(alturaUsuario);
         perfilNivelAtividade.setText(nivelAtividadeUsuario);
-        C.setText(objetivoUsuario);
+        perfilObjetivo.setText(objetivoUsuario);
     }
 
     @Override
