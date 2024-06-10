@@ -42,8 +42,12 @@
             android:name=".manterpeso"
             android:exported="false" />
         <activity
-            android:name=".ganharpeso"
+            android:name=".perderpeso"
             android:exported="false" />
+        <activity
+            android:name=".health_tips"
+            android:exported="false" />
+
         <activity
             android:name=".Inicial"
             android:exported="true">

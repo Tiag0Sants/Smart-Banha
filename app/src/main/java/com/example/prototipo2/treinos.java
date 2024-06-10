@@ -40,7 +40,6 @@ public class treinos extends AppCompatActivity {
                 finish();
             }
         });
-
         // Configurando o botão para a página de Perder Peso
         ImageView btnPerderPeso = findViewById(R.id.btnPerderPeso);
         btnPerderPeso.setOnClickListener(new View.OnClickListener() {
@@ -51,24 +50,7 @@ public class treinos extends AppCompatActivity {
             }
         });
 
-        // Configurando o botão para a página de Manter Peso
-        ImageView btnManterPeso = findViewById(R.id.btnManterPeso);
-        btnManterPeso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(treinos.this, manterpeso.class);
-                startActivity(intent);
-            }
-        });
 
-        // Configurando o botão para a página de Ganhar Peso
-        ImageView btnGanharPeso = findViewById(R.id.btnGanharPeso);
-        btnGanharPeso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(treinos.this, ganharpeso.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }
