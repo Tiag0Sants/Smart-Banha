@@ -19,7 +19,7 @@ import com.example.prototipo2.ganharpeso;
 import com.example.prototipo2.manterpeso;
 import com.example.prototipo2.perderpeso;
 
-public class treinos extends AppCompatActivity implements View.OnClickListener {
+public class refeicoes extends AppCompatActivity implements View.OnClickListener {
 
     Button perder, ganhar, manter;
     ImageView btnVoltar;
@@ -29,16 +29,16 @@ public class treinos extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_treinos);
+        setContentView(R.layout.activity_refeicoes);
 
 
-        perder = findViewById(R.id.btnPerderPeso);
+        perder = findViewById(R.id.RefeicaoPerderPeso);
         perder.setOnClickListener(this);
 
-        ganhar = findViewById(R.id.btnGanharPeso);
+        ganhar = findViewById(R.id.RefeicaoGanharPeso);
         ganhar.setOnClickListener(this);
 
-        manter = findViewById(R.id.btnManterPeso);
+        manter = findViewById(R.id.RefeicaoManterPeso);
         manter.setOnClickListener(this);
 
 
@@ -57,20 +57,20 @@ public class treinos extends AppCompatActivity implements View.OnClickListener {
             finish();
         }
 
-        if (v.getId() == R.id.btnPerderPeso){
-            Intent intent = new Intent(this, perderpeso.class);
+        if (v.getId() == R.id.RefeicaoPerderPeso){
+            Intent intent = new Intent(this, RefeicaoPerderPeso.class);
             startActivity(intent);
             finish();
         }
 
-        if (v.getId() == R.id.btnGanharPeso){
-            Intent intent = new Intent(this, perderpeso.class);
+        if (v.getId() == R.id.RefeicaoGanharPeso){
+            Intent intent = new Intent(this, RefeicaoGanharPeso.class);
             startActivity(intent);
             finish();
         }
 
-        if (v.getId() == R.id.btnManterPeso){
-            Intent intent = new Intent(this, perderpeso.class);
+        if (v.getId() == R.id.RefeicaoManterPeso){
+            Intent intent = new Intent(this, RefeicaoManterPeso.class);
             startActivity(intent);
             finish();
         }

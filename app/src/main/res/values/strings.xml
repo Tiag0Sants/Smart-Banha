@@ -71,4 +71,19 @@
     <string name="estamos_a_um_clique_de_dist_ncia_fale_conosco_agora_mesmo">Estamos a um clique de distância! Fale conosco agora mesmo. 👍( ͡❛ ͜ʖ ͡❛)👍</string>
     <string name="idade123">Idade:</string>
     <string name="nome">Nome:</string>
+    <string name="sairgyhb">Sair</string>
+    <string name="editarperfil">Editar</string>
+    <string name="perder_peso">Comida para perder peso</string>
+    <string name="ganhar_peso">Comida para ganhar peso</string>
+    <string name="manter_peso">Comida para manter peso</string>
+
+    <string-array name="opcoes_objetivo">
+        <item>Perder</item>
+        <item>Manter</item>
+        <item>Ganhar</item>
+        <!-- Adicione mais opções conforme necessário -->
+    </string-array>
+
+
+
 </resources>

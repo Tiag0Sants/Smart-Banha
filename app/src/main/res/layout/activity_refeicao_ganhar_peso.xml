@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ganharpeso">
+
+    <ImageView
+        android:id="@+id/btnvoltar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_manutencao_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Dieta para ganho de massa"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnvoltar" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_manutencao_peso">
+
+        <TextView
+            android:id="@+id/treino_manutencao_peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Segunda, Quarta, Sexta\n\n
+        Café da Manhã:\n
+        Omelete de claras com espinafre e tomate\n
+        1 fatia de pão integral\n
+        1 fruta (maçã ou banana)\n\n
+        Lanche da Manhã:\n
+        Iogurte natural sem açúcar com sementes de chia\n\n
+        Almoço:\n
+        Peito de frango grelhado\n
+        Salada verde com azeite de oliva e vinagre balsâmico\n
+        Quinoa ou arroz integral\n\n
+        Lanche da Tarde:\n
+        Cenouras baby com hummus\n
+        1 punhado de amêndoas\n\n
+        Jantar:\n
+        Salmão assado com limão e ervas\n
+        Brócolis cozido no vapor\n
+        Batata-doce assada\n\n
+        Ceia:\n
+        Chá verde sem açúcar\n
+        1 porção de frutas vermelhas\n\n
+        Terça, Quinta\n\n
+        Café da Manhã:\n
+        Smoothie de proteína (proteína em pó, espinafre, banana, leite de amêndoa)\n
+        1 torrada integral com abacate\n\n
+        Lanche da Manhã:\n
+        1 maçã com 1 colher de sopa de manteiga de amendoim\n\n
+        Almoço:\n
+        Salada de atum (atum, alface, tomate, cebola roxa, azeite de oliva)\n
+        1 porção de grão-de-bico\n\n
+        Lanche da Tarde:\n
+        Queijo cottage com fatias de pepino\n\n
+        Jantar:\n
+        Frango ao curry com leite de coco light\n
+        Couve-flor arrozada (substituindo arroz)"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

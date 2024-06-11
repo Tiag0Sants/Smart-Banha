@@ -137,7 +137,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/insta_image"
+        android:src="@drawable/fotoof"
+        android:radius="50dp"
         app:layout_constraintEnd_toStartOf="@+id/insta"
         app:layout_constraintTop_toBottomOf="@+id/image_face"
         tools:ignore="UnknownId" />
@@ -168,7 +169,7 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/estamos_a_um_clique_de_dist_ncia_fale_conosco_agora_mesmo"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.454"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".treinos">
+    tools:context=".refeicoes">
 
     <ImageView
         android:id="@+id/btnvoltar"
@@ -32,12 +32,12 @@
         android:layout_marginTop="10dp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPerderPeso"
+        android:id="@+id/RefeicaoPerderPeso"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:text="@string/perder_peso"
-        android:textSize="30sp"
-        android:background="@drawable/perder"
+        android:textSize="20sp"
+        android:background="@drawable/rato"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
         android:padding="20dp"
@@ -48,32 +48,32 @@
         app:layout_constraintWidth_percent="0.8" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnManterPeso"
+        android:id="@+id/RefeicaoManterPeso"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:text="Manter Peso"
-        android:textSize="30dp"
-        android:background="@drawable/manter"
-        android:textColor="@color/white"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/pao"
         android:fontFamily="@font/poppins_bold"
         android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@id/btnPerderPeso"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/manter_peso"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/RefeicaoPerderPeso"
         app:layout_constraintWidth_percent="0.8" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnGanharPeso"
+        android:id="@+id/RefeicaoGanharPeso"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:text="Ganhar Peso"
+        android:text="@string/ganhar_peso"
         android:textSize="30dp"
         android:background="@drawable/ganhar"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
         android:padding="20dp"
-        app:layout_constraintTop_toBottomOf="@id/btnManterPeso"
+        app:layout_constraintTop_toBottomOf="@id/RefeicaoManterPeso"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="40dp"

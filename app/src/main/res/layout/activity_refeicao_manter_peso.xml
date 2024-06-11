@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".RefeicaoManterPeso">
+
+    <ImageView
+        android:id="@+id/btnvoltar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo_manutencao_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Dieta para Manutenção de Peso"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_manutencao_peso">
+
+        <TextView
+            android:id="@+id/treino_manutencao_peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Segunda, Quarta, Sexta\n\n
+            Treino Cardiovascular:\n
+            Corrida/Caminhada: 20-30 minutos\n\n
+            Treino de Força:\n
+            Supino com Halteres: 3x10\n
+            Agachamento: 3x12\n
+            Desenvolvimento com Halteres: 3x10\n
+            Remada Curvada: 3x10\n
+            Abdominais: 3x15\n\n
+            Terça, Quinta\n
+            Treino Moderado:\n
+            Bicicleta/Corrida: 20-30 minutos\n
+            Abdominais: 3x15\n
+            Flexões: 3x10\n
+            Prancha: 3x30 segundos\n\n
+            Sábado\n
+            Treino Leve:\n
+            Caminhada/Corrida leve: 30-45 minutos\n
+            Alongamento: 10-15 minutos"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,7 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class perfil extends AppCompatActivity implements View.OnClickListener {
     ImageView btnvoltar;
-    TextView perfilNome, perfilIdade, perfilAltura, perfilNivelAtividade, perfilObjetivo;
+    TextView perfilNome, perfilIdade, perfilAltura, perfilObjetivo;
+    Button sair;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +23,11 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
         // Inicializa as views
         btnvoltar = findViewById(R.id.btnvoltar);
         perfilNome = findViewById(R.id.perfil_nome);
-        perfilIdade = findViewById(R.id.perfil_titulo_idade);
-        perfilAltura = findViewById(R.id.perfil_titulo_altura);
-        perfilNivelAtividade = findViewById(R.id.perfil_titulo_atv);
-        perfilObjetivo = findViewById(R.id.perfil_titulo_objetivo);
+        perfilIdade = findViewById(R.id.perfil_idade);
+        perfilAltura = findViewById(R.id.perfil_altura);
+        perfilObjetivo = findViewById(R.id.perfil_obj);
+        sair = findViewById(R.id.perfil_botao_sair);
+        sair.setOnClickListener(this);
 
         btnvoltar.setOnClickListener(this);  // Setting the onClickListener for the back button
 
@@ -33,14 +36,12 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
         String nomeUsuario = sharedPreferences.getString("nomeUsuario", "Usuário");
         int idadeUsuario = sharedPreferences.getInt("idadeUsuario", 0); // Modificado para recuperar um int
         float alturaUsuario = sharedPreferences.getFloat("alturaUsuario", 0); // Modificado para recuperar um float
-        String nivelAtividadeUsuario = sharedPreferences.getString("nivelAtividadeUsuario", "N/A");
         String objetivoUsuario = sharedPreferences.getString("objetivoUsuario", "N/A");
 
         // Define os valores nas TextViews
         perfilNome.setText(nomeUsuario);
         perfilIdade.setText(String.valueOf(idadeUsuario)); // Convertido para String
         perfilAltura.setText(String.valueOf(alturaUsuario)); // Convertido para String
-        perfilNivelAtividade.setText(nivelAtividadeUsuario);
         perfilObjetivo.setText(objetivoUsuario);
     }
 
@@ -52,5 +53,17 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
             startActivity(tela);
             finish();
         }
+
+        if (v.getId() == R.id.perfil_botao_sair){
+            Intent tela = new Intent(this, Inicial.class);
+            startActivity(tela);
+            finish();
+        }
+        if (v.getId() == R.id.perfil_botao_editar){
+            Intent tela = new Intent(this, cadastro2.class);
+            startActivity(tela);
+            finish();
+        }
+
     }
 }

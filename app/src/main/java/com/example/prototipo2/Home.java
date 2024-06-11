@@ -18,6 +18,7 @@ import android.widget.TextView;
         Button atendimento;
         Button desempenho; // Botão para desempenho
         Button platinhaTreino; // Botão para planilhas de treino
+        Button refeicoes;
         HelperClass Help;
         double tmb;
         double imc;
@@ -57,6 +58,9 @@ import android.widget.TextView;
 
             platinhaTreino = findViewById(R.id.platinha_treino); // Botão para planilhas de treino
             platinhaTreino.setOnClickListener(this); // Configurar o OnClickListener
+
+            refeicoes = findViewById(R.id.refeicoes);
+            refeicoes.setOnClickListener(this);
         }
 
         @Override
@@ -78,6 +82,12 @@ import android.widget.TextView;
                 intent.putExtra("IMC_RESULTADO", imc); // Passa o valor do IMC
                 startActivity(intent);
 
+            }
+
+            if(v.getId() == R.id.refeicoes){
+                Intent intent = new Intent(Home.this, refeicoes.class);
+                startActivity(intent);
+                finish();
             }
 
 

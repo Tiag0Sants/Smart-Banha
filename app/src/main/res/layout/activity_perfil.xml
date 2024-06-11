@@ -18,7 +18,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:src="@drawable/baseline_arrow_back_ios_24"
-        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,13 +33,16 @@
 
     <View
         android:id="@+id/info"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="407dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/container_components"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foto_perfil"
-        tools:ignore="UnknownId"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.239" />
 
     <TextView
         android:id="@+id/perfil_titulo_nome"
@@ -54,7 +56,6 @@
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/info"
         app:layout_constraintTop_toTopOf="@+id/info" />
-
 
     <TextView
         android:id="@+id/perfil_nome"
@@ -76,65 +77,95 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="@string/idade123"
+        android:text="Idade:"
         android:textColor="@color/white"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_nome"
-        tools:ignore="MissingConstraints,UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_nome" />
+
+    <TextView
+        android:id="@+id/perfil_idade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_nome" />
 
     <TextView
         android:id="@+id/perfil_titulo_altura"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Altura:"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_idade"
-        tools:ignore="UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_idade" />
 
     <TextView
-        android:id="@+id/perfil_titulo_atv"
-        android:layout_width="250dp"
+        android:id="@+id/perfil_altura"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="200dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Nivel de atividade:"
-        android:textColor="@color/white"
-        android:textSize="25dp"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_altura"
-        tools:ignore="UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/perfil_idade" />
+
 
     <TextView
         android:id="@+id/perfil_titulo_objetivo"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Objetivo:"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_atv"
-        tools:ignore="UnknownId" />
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_altura" />
+
+    <TextView
+        android:id="@+id/perfil_obj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text=""
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_altura" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/perfil_botao_editar"
+        style="@style/button"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/editarperfil"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_objetivo" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/perfil_botao_sair"
         style="@style/button"
         android:fontFamily="@font/poppins_bold"
-        android:text="Sair"
+        android:text="@string/sairgyhb"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@id/info"
-        app:layout_constraintStart_toStartOf="@id/info"
-        app:layout_constraintTop_toBottomOf="@id/perfil_titulo_objetivo"
-        tools:ignore="NotSibling" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_botao_editar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

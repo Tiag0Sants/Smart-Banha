@@ -9,25 +9,48 @@
 
     <ImageView
         android:id="@+id/btnvoltar"
-        android:src="@drawable/baseline_arrow_back_ios_24"
-        android:layout_height="30dp"
         android:layout_width="30dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="30dp"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/baseline_arrow_back_ios_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewHealthTips"
-        android:layout_width="0dp"
-        android:layout_marginTop="50dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textSize="16sp"
-        android:textColor="@color/white"
+        android:layout_width="193dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_semibold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Dicas de Saúde:"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/btnvoltar"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewHealth"
+        android:layout_width="360dp"
+        android:layout_height="458dp"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/poppins_semibold"
+
+
+        android:text="1. Mantenha uma dieta equilibrada e saudável.\n\n
+2. Beba muita água ao longo do dia.\n\n
+3. Pratique exercícios físicos regularmente.\n\n
+4. Durma pelo menos 7-8 horas por noite.\n\n
+5. Evite o consumo excessivo de álcool e tabaco.\n\n
+6. Realize check-ups médicos regularmente.\n\n
+7. Gerencie o estresse através de técnicas de relaxamento como meditação ou yoga.
+"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHealthTips" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
