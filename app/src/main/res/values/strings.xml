@@ -76,6 +76,8 @@
     <string name="perder_peso">Comida para perder peso</string>
     <string name="ganhar_peso">Comida para ganhar peso</string>
     <string name="manter_peso">Comida para manter peso</string>
+    <string name="salvar">Salvar</string>
+
 
     <string-array name="opcoes_objetivo">
         <item>Perder</item>
