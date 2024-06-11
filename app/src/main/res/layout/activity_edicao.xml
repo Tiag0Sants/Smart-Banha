@@ -32,6 +32,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Aqui começam os campos editáveis -->
+
     <View
         android:id="@+id/info"
         android:layout_width="0dp"
@@ -40,21 +42,23 @@
         android:background="@drawable/container_components"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foto_perfil" />
-
-    <!-- Aqui começam os campos editáveis -->
+        app:layout_constraintTop_toBottomOf="@+id/foto_perfil"
+        app:layout_constraintVertical_bias="0.106" />
 
     <TextView
         android:id="@+id/perfil_titulo_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/nome"
         android:textColor="@color/white"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="379dp"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toTopOf="@+id/info"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -62,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/altura"
         android:textColor="@color/white"
@@ -74,27 +78,16 @@
         android:id="@+id/edit_altura"
         android:layout_width="238dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:background="@null"
         android:fontFamily="@font/poppins_bold"
         android:hint="@string/altura"
         android:textColor="@color/white"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="490dp"
+        app:layout_constraintStart_toEndOf="@+id/perfil_titulo_altura"
+        app:layout_constraintTop_toBottomOf="@+id/edit_idade"
         tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/perfil_titulo_objetivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/objetivo"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/info"
-        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_altura" />
 
 
     <!-- Adicione campos similares para outros dados do perfil (altura, objetivo, etc.) -->
@@ -103,25 +96,41 @@
         android:id="@+id/spinner_objetivo"
         android:layout_width="238dp"
         android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:background="@null"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/white"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="541dp"
+        app:layout_constraintStart_toEndOf="@+id/perfil_titulo_objetivo"
+        app:layout_constraintTop_toBottomOf="@+id/edit_altura"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/perfil_titulo_objetivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/objetivo"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/perfil_titulo_altura" />
 
     <EditText
         android:id="@+id/edit_nome"
         android:layout_width="215dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:background="@null"
         android:fontFamily="@font/poppins_bold"
         android:hint="@string/nome"
         android:textColor="@color/white"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="379dp"
+        app:layout_constraintStart_toEndOf="@+id/perfil_titulo_nome"
+        app:layout_constraintTop_toTopOf="@+id/info"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -141,13 +150,15 @@
         android:id="@+id/edit_idade"
         android:layout_width="238dp"
         android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:background="@null"
         android:fontFamily="@font/poppins_bold"
         android:hint="@string/idade"
         android:textColor="@color/white"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="430dp"
+        app:layout_constraintStart_toEndOf="@+id/perfil_titulo_idade"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nome"
         tools:ignore="MissingConstraints" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -155,12 +166,14 @@
         style="@style/button"
         android:layout_width="251dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/salvar"
         android:textColor="@color/white"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="645dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_objetivo"
         tools:ignore="MissingConstraints" />
 
 

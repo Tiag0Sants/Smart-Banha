@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-
 public class perfil extends AppCompatActivity implements View.OnClickListener {
     ImageView btnvoltar;
     TextView perfilNome, perfilIdade, perfilAltura, perfilObjetivo;
@@ -43,7 +41,6 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btnvoltar) {
-            // If back button is clicked
             Intent tela = new Intent(this, Home.class);
             startActivity(tela);
             finish();
@@ -68,11 +65,13 @@ public class perfil extends AppCompatActivity implements View.OnClickListener {
 
     private void atualizarDadosPerfil() {
         // Recupera os dados de SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("perfil_preferences", MODE_PRIVATE);
         String nomeUsuario = sharedPreferences.getString("nomeUsuario", "Usuário");
         int idadeUsuario = sharedPreferences.getInt("idadeUsuario", 0);
         float alturaUsuario = sharedPreferences.getFloat("alturaUsuario", 0);
-        String objetivoUsuario = sharedPreferences.getString("objetivoUsuario", "N/A");
+        String[] objetivos = getResources().getStringArray(R.array.opcoes_objetivo);
+        int objetivoIndex = sharedPreferences.getInt("objetivoUsuario", 0);
+        String objetivoUsuario = objetivos[objetivoIndex];
 
         // Define os valores nas TextViews
         perfilNome.setText(nomeUsuario);
