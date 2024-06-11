@@ -13,6 +13,7 @@
     <string name="idade">Idade:</string>
     <string name="digite_sua_idade">Digite sua idade</string>
     <string name="altura">Altura:</string>
+    <string name="altura123">Digite sua altura</string>
     <string name="digite_sua_idade123">Digite sua idade</string>
     <string name="peso_kg">Peso (Kg):</string>
     <string name="digite_sua_idade321">Digite sua idade</string>
@@ -77,6 +78,7 @@
     <string name="ganhar_peso">Comida para ganhar peso</string>
     <string name="manter_peso">Comida para manter peso</string>
     <string name="salvar">Salvar</string>
+    <string name="perder_peso1231231">Perder peso</string>
 
 
     <string-array name="opcoes_objetivo">

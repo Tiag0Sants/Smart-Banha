@@ -42,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foto_perfil"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <TextView
         android:id="@+id/perfil_titulo_nome"
@@ -125,8 +125,8 @@
 
     <TextView
         android:id="@+id/perfil_titulo_objetivo"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="121dp"
+        android:layout_height="37dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
@@ -140,7 +140,7 @@
         android:id="@+id/perfil_obj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
+        android:layout_marginStart="204dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text=""

@@ -35,7 +35,7 @@
         android:id="@+id/btnPerderPeso"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:text="@string/perder_peso"
+        android:text="@string/perder_peso1231231"
         android:textSize="30sp"
         android:background="@drawable/perder"
         android:textColor="@color/white"
